@@ -4,7 +4,7 @@ Traducción al español del curso [R_Programming_Alt](https://github.com/swirlde
 
 **Descripción**
 
-El paquete de R [swirl](http://swirlstats.com/) permite crear cursos interactivos que se ejecutan desde la propia consola de R, por lo cual el estudiante puede ejecutar la instrucciiones directamente en R en la medida que avanza su curso. Existen varios cursor en el (repositorio de swirl)[https://github.com/swirldev/swirl_courses], pero todos estan en ingles.
+El paquete de R [swirl](http://swirlstats.com/) permite crear cursos interactivos que se ejecutan desde la propia consola de R, por lo cual el estudiante puede ejecutar la instrucciiones directamente en R en la medida que avanza su curso. Existen varios cursor en el [repositorio de swirl](https://github.com/swirldev/swirl_courses), pero todos estan en ingles.
 
 **Objetivo**
 
