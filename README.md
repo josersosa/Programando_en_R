@@ -1,14 +1,14 @@
 # Programando en R
 
-Traducción al español del curso [R_Programming_Alt de swirl](https://github.com/swirldev/swirl_courses/tree/master/R_Programming_Alt). 
+Traducción al español del curso [R_Programming_Alt](https://github.com/swirldev/swirl_courses/tree/master/R_Programming_Alt) de [swirl](http://swirlstats.com/). 
 
 **Descripción**
 
-El paquete de R [swirl](http://swirlstats.com/) permite crear cursos interactivos que se ejecutan desde la propia consola de R, por lo cual el estudiante puede ejecutar la instrucciiones directamente en R en la medida que avanza su curso. Existen varios cursor en el repositorio de swirl, pero todos estan en ingles.
+El paquete de R [swirl](http://swirlstats.com/) permite crear cursos interactivos que se ejecutan desde la propia consola de R, por lo cual el estudiante puede ejecutar la instrucciiones directamente en R en la medida que avanza su curso. Existen varios cursor en el (repositorio de swirl)[https://github.com/swirldev/swirl_courses], pero todos estan en ingles.
 
 **Objetivo**
 
-El objetivode este proyecto es disponer un completo curso interactivo de R en el idioma español para aquellos hispanohablantes interesados en aprender este lenguaje de programación.
+El objetivo de este proyecto es disponer un completo curso interactivo de R en el idioma español para aquellos hispanohablantes interesados en aprender este lenguaje de programación. Para esto se traducirá el curso R_Programming_Alt](https://github.com/swirldev/swirl_courses/tree/master/R_Programming_Alt)
 
 **Prerrequisitos**
 
