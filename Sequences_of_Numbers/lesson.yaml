@@ -10,19 +10,19 @@
   Output: En esta lección, usted aprenderá cómo crear secuencias de números en R.
 
 - Class: cmd_question
-  Output: La forma más sencilla de crear una secuencia de números en el que R es mediante el uso de la `:` operador. Escriba 1:20 para ver cómo funciona.
+  Output: La forma más sencilla de crear una secuencia de números en el que R es mediante el uso del operador `:`. Escriba 1:20 para ver cómo funciona.
   CorrectAnswer: '1:20'
   AnswerTests: omnitest(correctExpr='1:20')
   Hint: Escriba 1:20 sin espacios. Asegúrese de utilizar dos puntos regulares y no un punto y coma.
 
 - Class: cmd_question
-  Output: Eso nos dio todo entero entre (e incluyendo) 1 y 20. También podríamos utilizarlo para crear una secuencia de números reales. Por ejemplo, trate con pi:10.
+  Output: Eso nos dio todo entero entre 1 y 20 ambos inclusive. También podríamos utilizarlo para crear una secuencia de números reales. Por ejemplo, trate con pi:10.
   CorrectAnswer: pi:10
   AnswerTests: omnitest(correctExpr='pi:10')
-  Hint: Enter Introduzca pi: 10 y ver qué pasa. pi es una constante predefinida en R que toma en el valor 3.1415....
+  Hint: Enter Introduzca pi:10 y ver qué pasa. pi es una constante predefinida en R que toma en el valor 3.1415....
 
 - Class: text
-  Output: El resultado es un vector de números reales que empiezan por pi (3.142...) y el aumento va en incrementos de 1. Nunca se alcanza el límite superior de 10, ya que el siguiente número en nuestra secuencia sería mayor que 10.
+  Output: El resultado es un vector de números reales que empiezan por pi (3.1415...) y el aumento va en incrementos de 1. Nunca se alcanza el límite superior de 10, ya que el siguiente número en nuestra secuencia sería mayor que 10.
 
 - Class: cmd_question
   Output: "¿Qué pasa si hacemos 15:1? Dese la oportunidad de averiguarlo."
@@ -52,16 +52,16 @@
   Hint: Escriba seq(1, 20) y pulse Enter. No se requiere el espacio después de la coma, pero se recomienda ya que tiende a hacer que el código parece más despejado.
 
 - Class: cmd_question
-  Output: Esto nos da el mismo resultado que 1:20. Sin embargo, vamos a decir que en lugar de eso quieren un vector de números que van de 0 a 10, incrementado en 0,5. seq (0, 10, by = 0,5) hace precisamente eso. Intentalo.
+  Output: Esto nos da el mismo resultado que 1:20. Sin embargo, vamos a decir que en lugar de eso quieren un vector de números que van de 0 a 10, incrementado en 0,5. seq(0, 10, by = 0.5) hace precisamente eso. Intentalo.
   CorrectAnswer: seq(0, 10, by=0.5)
   AnswerTests: omnitest(correctExpr='seq(0, 10, by=0.5)')
-  Hint: Usted todavía está utilizando la función seq() aquí, pero esta vez con un argumento extra que le dice a R que desea incrementar cada paso de la secuencia en 0,5. Pruebe seq(0, 10, by = 0,5).
+  Hint: Usted todavía está utilizando la función seq() aquí, pero esta vez con un argumento extra que le dice a R que desea incrementar cada paso de la secuencia en 0,5. Pruebe seq(0, 10, by = 0.5).
 
 - Class: cmd_question
   Output: O tal vez no nos importa el incremento y sólo queremos una secuencia de 30 números entre 5 y 10. seq(5, 10, length=30) produce este efecto. Hazlo ahora y almacena el resultado en una nueva variable llamada my_seq.
   CorrectAnswer: my_seq <- seq(5, 10, length=30)
   AnswerTests: omnitest(correctExpr='my_seq <- seq(5, 10, length=30)')
-  Hint: Estas usando la misma función aquí, pero cambiando sus argumentos para diferentes resultados. Asegúrese de guardar el resultado en una nueva variable llamada my_seq, así: my_seq <- seq(5, 10, length=30) '.
+  Hint: 'Estas usando la misma función aquí, pero cambiando sus argumentos para diferentes resultados. Asegúrese de guardar el resultado en una nueva variable llamada my_seq, así: my_seq <- seq(5, 10, length=30).'
 
 - Class: cmd_question
   Output: Para confirmar que my_seq tiene longitud 30, podemos utilizar la función length(). Inténtalo ahora.
