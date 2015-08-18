@@ -44,5 +44,5 @@ uninstall_course("Programando_en_R")
 
 **Avance del proyecto**
 
-Hasta ahora tiene una avance del **8.3%** en la traducción.
+Hasta ahora tiene una avance del **16.6%** en la traducción.
 
