@@ -4,7 +4,7 @@ Traducción al español del curso [R_Programming_Alt](https://github.com/swirlde
 
 **Descripción**
 
-El paquete de R [swirl](http://swirlstats.com/) permite crear cursos interactivos que se ejecutan desde la propia consola de R, por lo cual el estudiante puede ejecutar la instrucciiones directamente en R en la medida que avanza su curso. Existen varios cursor en el [repositorio de swirl](https://github.com/swirldev/swirl_courses), pero todos estan en ingles.
+El paquete de R [swirl](http://swirlstats.com/)("Learn R, in R") permite crear cursos interactivos que se ejecutan desde la propia consola de R, por lo cual el estudiante puede ejecutar la instrucciiones directamente en R en la medida que avanza su curso. Existen varios cursor en el [repositorio de swirl](https://github.com/swirldev/swirl_courses), pero todos están en ingles.
 
 **Objetivo**
 
@@ -44,5 +44,5 @@ uninstall_course("Programando_en_R")
 
 **Avance del proyecto**
 
-Hasta ahora tiene una avance del **16.6%** en la traducción.
+Hasta ahora tiene una avance del **25%** en la traducción. Estan traducudas las lecciones 1, 2, y 3.
 
