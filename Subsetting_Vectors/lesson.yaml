@@ -1,68 +1,69 @@
 - Class: meta
   Course: Programando en R
-  Lesson: Subsetting Vectors
+  Lesson: Subcomjuntos de Vectores
   Author: Nick Carchedi
   Type: Standard
   Organization: JHU Biostat
   Version: 2.2.0
 
 - Class: text
-  Output: In this lesson, we'll see how to extract elements from a vector based on some conditions that we specify.
+  Output: En esta lección, vamos a ver cómo extraer elementos de un vector basado en algunas condiciones que especifiquemos.
 
 - Class: text
-  Output: For example, we may only be interested in the first 20 elements of a vector, or only the elements that are not NA, or only those that are positive or correspond to a specific variable of interest. By the end of this lesson, you'll know how to handle each of these scenarios.
+  Output: Por ejemplo, sólo puede estar interesado en los primeros 20 elementos de un vector, o sólo los elementos que no son NA, o sólo aquellos que son positivos o corresponden a una variable específica de interés. Al final de esta lección, usted sabrá cómo manejar cada uno de estos escenarios.
 
 - Class: cmd_question
-  Output: I've created for you a vector called x that contains a random ordering of 20 numbers (from a standard normal distribution) and 20 NAs. Type x now to see what it looks like.
+  Output: He creado para ti un vector llamado x que contiene una ordenación aleatoria de 20 números (de una distribución normal estándar) y 20 NAs. Escriba x ahora para ver lo que contiene.
   CorrectAnswer: x
   AnswerTests: omnitest(correctExpr='x')
-  Hint: Type x to view its contents.
+  Hint: Escriba x para ver su contenido.
 
 - Class: text
-  Output: The way you tell R that you want to select some particular elements (i.e. a 'subset') from a vector is by placing an 'index vector' in square brackets immediately following the name of the vector.
+  Output: La forma en que dices a R que deseas seleccionar algunos elementos particulares (es decir, un "subconjunto") de un vector, es mediante la colocación de un "vector índice", entre corchetes, inmediatamente después del nombre del vector.
 
 - Class: cmd_question
-  Output: For a simple example, try x[1:10] to view the first ten elements of x.
+  Output: Para un ejemplo sencillo, intente con x[1:10] para ver los primeros diez elementos de x.
   CorrectAnswer: x[1:10]
   AnswerTests: omnitest(correctExpr='x[1:10]')
-  Hint: View the first ten elements of x with x[1:10].
+  Hint: Vea los diez primeros elementos de x con x[1:10].
 
 - Class: text
-  Output: Index vectors come in four different flavors -- logical vectors, vectors of positive integers, vectors of negative integers, and vectors of character strings -- each of which we'll cover in this lesson.
+  Output: Los vectores índice vienen en cuatro sabores diferentes -- vectores lógicos, vectores de enteros positivos, vectores de enteros negativos y vectores de cadenas de caracteres -- cada uno de los cuales vamos a cubrir en esta lección.
 
 - Class: text
-  Output: Let's start by indexing with logical vectors. One common scenario when working with real-world data is that we want to extract all elements of a vector that are not NA (i.e. missing data). Recall that is.na(x) yields a vector of logical values the same length as x, with TRUEs corresponding to NA values in x and FALSEs corresponding to non-NA values in x.
+  Output: Empecemos por la indexación con vectores lógicos. Un escenario común cuando se trabaja con datos del mundo real es que queremos extraer todos los elementos de un vector que no son NA (es decir, los datos que faltan). Recordemos que is.na(x) obtiene un vector de valores lógicos de la misma longitud que x, con TRUEs correspondientes a los valores de NA en x y FALSEs correspondientes a valores no NA en x.
 
 - Class: mult_question
-  Output: What do you think x[is.na(x)] will give you?
-  AnswerChoices: A vector of all NAs; A vector with no NAs; A vector of TRUEs and FALSEs; A vector of length 0
-  CorrectAnswer: A vector of all NAs
-  AnswerTests: omnitest(correctVal="A vector of all NAs")
-  Hint: Remember that is.na(x) tells us where the NAs are in a vector. So if we subset x based on that, what do you expect to happen?
+  Output: ¿Qué opinas sobre lo que x[is.na(x)] te dará?
+  AnswerChoices: Un vector de todas las NAs; Un vector sin las NAs; Un vector de TRUEs y FALSEs; Un vector de longitud 0
+  CorrectAnswer: Un vector de todas las NAs
+  AnswerTests: omnitest(correctVal="Un vector de todas las NAs")
+  Hint: Recuerde que is.na(x) nos dice donde las AN están en un vector. Así que si contruimos un subconjunto x basado en eso, ¿qué es lo que usted espera que suceda?
 
 - Class: cmd_question
-  Output: Prove it to yourself by typing x[is.na(x)].
+  Output: Demuestrese a sí mismo escribiendo x[is.na(x)].
   CorrectAnswer: x[is.na(x)]
   AnswerTests: omnitest(correctExpr='x[is.na(x)]')
-  Hint: Type x[is.na(x)] to see that you get all NAs, which is clearly not what we want!
+  Hint: Escriba x[is.na(x)] para ver que usted obtendrá todos los NAs, lo que claramente, no es lo que queremos!
 
 - Class: cmd_question
-  Output: Recall that `!` gives us the negation of a logical expression, so !is.na(x) can be read as 'is not NA'. Therefore, if we want to create a vector called y that contains all of the non-NA values from x, we can use y <- x[!is.na(x)]. Give it a try.
+  Output: Recordemos que `!` nos da la negación de una expresión lógica, por lo !is.na(x) se puede leer como "no es NA". Por lo tanto, si queremos crear un vector llamado y que contenga todos los valores no-NA de x, podemos utilizar y <- x[!is.na(x)]. Dese la oportunidad.
   CorrectAnswer: y <- x[!is.na(x)]
   AnswerTests: omnitest(correctExpr='y <- x[!is.na(x)]')
-  Hint: Type y <- x[!is.na(x)] to capture all non-missing values from x.
+  Hint: Escriba y <- x[!is.na(x)] para capturar todos los valores no faltantes de x.
 
 - Class: cmd_question
-  Output: Print y to the console.
+  Output: Imprimir y en la consola.
   CorrectAnswer: 'y'
   AnswerTests: omnitest(correctExpr='y')
-  Hint: Type y to view its contents.
+  Hint: Escriba y para ver su contenido.
 
 - Class: text
-  Output: Now that we've isolated the non-missing values of x and put them in y, we can subset y as we please.
+  Output: Ahora que hemos aislado los valores no perdidos de x y los pusimos en y, podemos crear los subconjuntos y como nos plazca.
 
 - Class: mult_question
   Output: Recall that the expression y > 0 will give us a vector of logical values the same length as y, with TRUEs corresponding to values of y that are greater than zero and FALSEs corresponding to values of y that are less than or equal to zero. What do you think y[y > 0] will give you?
+  Recordemos que la expresión y > 0 nos dará un vector de valores lógicos de la misma longitud de y, con TRUEs correspondientes a los valores de y que son mayores que cero y FALSEs correspondientes a valores de y que son menos que o igual a cero . ¿Qué piensa usted de lo que y[y > 0] le dará?
   AnswerChoices: A vector of all the positive elements of y; A vector of all the negative elements of y; A vector of all NAs; A vector of length 0; A vector of TRUEs and FALSEs
   CorrectAnswer: A vector of all the positive elements of y
   AnswerTests: omnitest(correctVal="A vector of all the positive elements of y")
