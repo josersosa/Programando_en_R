@@ -45,7 +45,6 @@
   AnswerTests: omnitest(correctExpr='my_data <- sample(c(y, z), 100)')
   Hint: La función de sample() genera una muestra aleatoria de los datos facilitados como primer argumento (en este caso c (y, z)) del tamaño especificado por el segundo argumento (100). El comando my_data <- sample(c(y, z), 100) nos dará lo que queremos.
 
-
 - Class: cmd_question
   Output: Primero vamos a hacer la pregunta de dónde se encuentran los NA en nuestros datos. La función is.na() nos dice si cada elemento de un vector es NA. Llame a is.na() en my_data y asigne el resultado a my_na.
   CorrectAnswer: my_na <- is.na(my_data)
@@ -53,8 +52,7 @@
   Hint: Asigne el resultado de is.na(my_data) a la variable my_na.
 
 - Class: cmd_question
-  Output: Now, print my_na to see what you came up with.
-  Ahora, imprima my_na para ver lo que le ocurrió.
+  Output: Ahora, imprima my_na para ver lo que le ocurrió.
   CorrectAnswer: my_na
   AnswerTests: omnitest(correctExpr='my_na')
   Hint: Escriba my_na para ver su contenido.
@@ -81,7 +79,7 @@
   Output: El truco es reconocer que debajo de la superficie, R representa TRUE como el número 1 y FALSE como el número 0. Por lo tanto, si tomamos la suma de un montón de TRUEs y FALSEs, obtenemos el número total de TRUEs.
 
 - Class: cmd_question
-  Output:Vamos a hacer una prueba aquí. Llame a la función sum() en my_na para contar el número total de Verdaderos en my_na, y por lo tanto el número total de NAs en my_data. No asigne el resultado de una nueva variable.
+  Output: Vamos a hacer una prueba aquí. Llame a la función sum() en my_na para contar el número total de TRUEs en my_na, y por lo tanto el número total de NAs en my_data. No asigne el resultado de una nueva variable.
   CorrectAnswer: sum(my_na)
   AnswerTests: omnitest(correctExpr='sum(my_na)')
   Hint: Utilice sum(my_na) para contar el número de NAs en los datos.
@@ -90,7 +88,7 @@
   Output: Bastante bien, ¿eh? Por último, vamos a echar un vistazo a los datos para convencernos de que todo 'suma'. Imprimir my_data en la consola.
   CorrectAnswer: my_data
   AnswerTests: omnitest(correctExpr='my_data')
-  Hint: Imprimir my_data a la consola
+  Hint: Imprimir my_data a la consola.
 
 - Class: cmd_question
   Output: Ahora que tenemos los NA al dedillo, echemos un vistazo a un segundo tipo de valor faltante, el NaN, que significa 'no es un número ". Para generar NaN, intente dividir (utilizando una barra inclinada) 0 entre 0 ahora.
