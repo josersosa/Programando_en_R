@@ -12,7 +12,7 @@ El objetivo de este proyecto es disponer un curso interactivo sobre los fundamen
 
 **Prerrequisitos**
 
-Para acceder a este curso debes tener instalado el paquete [swirl](http://swirlstats.com/):
+Para acceder a este curso debes tener instalado el R, y preferiblemente Rstudio, así como el paquete [swirl](http://swirlstats.com/). Puedes instalarlo desde la consola de R así:
 
 ```{r}
 install.packages('swirl')
@@ -20,7 +20,7 @@ install.packages('swirl')
 
 **¿Como ejecutar el curso?**
 
-Para realizar este curso debemos primero instalarlo desde este repositorio en github, así:
+Para realizar este curso debemos primero instalarlo desde este repositorio en github, desde la consola de R así:
 
 ```{r}
 library(swirl)
@@ -33,7 +33,7 @@ Y lo iniciamos con:
 swirl()
 ```
 
-Al comienzo nos solicita un nombre para identificarnos y almacenar los avances en el caso que deseemos pausar el curso. Las primeras informaciones estan en ingles porque provienen del paquete swirl. Luego seleccionamos el curso _Programando en R_ y a partir de ahí todo estará traducido.
+Al comienzo nos solicita un nombre para identificarnos y almacenar los avances que agamos en el caso que deseemos pausar el curso. Las primeras informaciones estan en ingles porque provienen del paquete swirl. Luego seleccionamos el curso _Programando en R_ y a partir de ahí todo lo esencial estará traducido.
 
 Por último, cuando hayamos terminado, podemos desinstalar el curso con:
 
@@ -44,5 +44,12 @@ uninstall_course("Programando_en_R")
 
 **Avance del proyecto**
 
-Hasta ahora tiene una avance del **33%** en la traducción. Estan traducidas las lecciones 1 a la 4.
+Hasta ahora, este proyecto tiene una avance del **50%** en la traducción. Estan traducidas las lecciones de la 1 a la 6.
 
+
+**TODOs**
+
+Incluir las lecciones del curso [R Programming](https://github.com/swirldev/swirl_courses/tree/master/R_Programming)de swirl:
+- Workspace_and_Files
+- Functions
+- Base_Graphics
