@@ -20,7 +20,7 @@ install.packages('swirl')
 
 **¿Como ejecutar el curso?**
 
-Para realizar este curso debemos primero instalarlo desde este repositorio en github, desde la consola de R así:
+Para realizar este curso debemos primero instalarlo desde su repositorio en github en la consola de R, así:
 
 ```{r}
 library(swirl)
