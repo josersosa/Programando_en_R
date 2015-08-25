@@ -49,7 +49,7 @@ Hasta ahora, este proyecto tiene una avance del **58%** en la traducción. Estan
 
 **TODOs**
 
-Incluir las lecciones del curso [R Programming](https://github.com/swirldev/swirl_courses/tree/master/R_Programming)de swirl:
+Incluir las lecciones del curso [R Programming](https://github.com/swirldev/swirl_courses/tree/master/R_Programming) de swirl:
 - Workspace_and_Files
 - Functions
 - Base_Graphics

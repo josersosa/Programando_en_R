@@ -188,7 +188,7 @@
   Hint: 'isTRUE() sólo devolverá TRUE si la instrucción se le pasa como argumento es TRUE.'
   
 - Class : cmd_question
-  Output: "La función identical() devolverá TRUE si los dos objetos R pasados a ella como argumentos son idénticos. Pruebe la función identical() escribiendo: iidentical('twins', 'twins')"
+  Output: "La función identical() devolverá TRUE si los dos objetos R pasados a ella como argumentos son idénticos. Pruebe la función identical() escribiendo: identical('twins', 'twins')"
   CorrectAnswer: "identical('twins', 'twins')"
   AnswerTests: omnitest(correctExpr="identical('twins', 'twins')")
   Hint: "Si usted quiere ver si dos objetos R son iguales, escriba: identical('twins', 'twins')"
