@@ -130,7 +130,7 @@
   Output: ¿Cuál crees que es la declaración verdadera?
   CorrectAnswer: El primer elemento de my_div es igual al primer elemento de z dividido por el primer elemento de my_sqrt, y así sucesivamente ...
   AnswerChoices: El primer elemento de my_div es igual al primer elemento de z dividido por el primer elemento de my_sqrt, y así sucesivamente ...; my_div es un solo número (es decir, un vector de longitud 1); my_div es indefinido
-  AnswerTests: omnitest(correctVal=''El primer elemento de my_div es igual al primer elemento de z dividido por el primer elemento de my_sqrt, y así sucesivamente ...')
+  AnswerTests: omnitest(correctVal='El primer elemento de my_div es igual al primer elemento de z dividido por el primer elemento de my_sqrt, y así sucesivamente ...')
   Hint: Piense acerca de cómo R maneja las otras operaciones 'vectorizadas' como `+` y `*`.
 
 - Class: cmd_question
