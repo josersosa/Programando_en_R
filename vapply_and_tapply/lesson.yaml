@@ -16,7 +16,7 @@
   Output: "El conjunto de datos flags del aprendizaje del repositorio UCI Machine contiene detalles de diversas naciones y sus banderas. Más información se puede encontrar aquí: Http://archive.ics.uci.edu/ml/datasets/Flags"
 
 - Class: text
-  Output: He almacenado los datos en una variable llamada flags. Si ha pasado un tiempo desde que completó la lección "lapply y sapply", es posible que desee reencontrarse con los datos mediante el uso de funciones como dim(), head(), str(), y summary() cuando regrese a la símbolo (>). También puede escribir viewinfo() en el indicador para que aparezca algún tipo de documentación para el conjunto de datos. ¡Empecemos!
+  Output: He almacenado los datos en una variable llamada flags. Si ha pasado un tiempo desde que completó la lección "lapply y sapply", es posible que desee reencontrarse con los datos mediante el uso de funciones como dim(), head(), str() y summary() cuando regrese a la símbolo (>). También puede escribir viewinfo() en el indicador para que aparezca algún tipo de documentación para el conjunto de datos. ¡Empecemos!
 
 - Class: cmd_question
   Output: Como vimos en la lección anterior, la función unique() devuelve un vector de los valores únicos contenidos en el objeto que se le pasa. Por lo tanto, sapply(flags, unique) devuelve una lista que contiene un vector de valores únicos para cada columna del conjunto de datos flags. Inténtalo de nuevo ahora.
