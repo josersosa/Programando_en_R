@@ -1,241 +1,241 @@
 - Class: meta
   Course: Programando en R
-  Lesson: lapply and sapply
+  Lesson: lapply y sapply
   Author: Nick Carchedi
   Type: Standard
   Organization: JHU Biostat
   Version: 2.2.11
 
 - Class: text
-  Output: In this lesson, you'll learn how to use lapply() and sapply(), the two most important members of R's *apply family of functions, also known as loop functions.
+  Output: En esta lección, aprenderá cómo utilizar las funciones lapply() y sapply(), son dos de los miembros más importantes de la familia de funciones *apply de R , también conocidas como las funciones lazo.
 
 - Class: text
-  Output: These powerful functions, along with their close relatives (vapply() and tapply(), among others) offer a concise and convenient means of implementing the Split-Apply-Combine strategy for data analysis.
+  Output: Estas poderosas funciones, junto con sus familiares cercanos (vapply() y tapply(), entre otros) ofrecen un medio conciso y práctico para la aplicación de la estrategia Dividir-Aplicar-Combinar (Split-Apply-Combine) en el análisis de datos.
 
 - Class: text
-  Output: Each of the *apply functions will SPLIT up some data into smaller pieces, APPLY a function to each piece, then COMBINE the results. A more detailed discussion of this strategy is found in Hadley Wickham's Journal of Statistical Software paper titled 'The Split-Apply-Combine Strategy for Data Analysis'.
+  Output: En cada una de las funciones *apply se dividirán algunos datos en pedazos más pequeños, se aplica una función a cada pedazo, y luego se combinan los resultados. Una discusión más detallada de esta estrategia se encuentra en el artículo titulado "The Split-Apply-Combine Strategy for Data Analysis" por Hadley Wickham en el Journal of Statistical Software.
 
 - Class: text
-  Output: "Throughout this lesson, we'll use the Flags dataset from the UCI Machine Learning Repository. This dataset contains details of various nations and their flags. More information may be found here: http://archive.ics.uci.edu/ml/datasets/Flags"
+  Output: "A lo largo de esta lección, vamos a utilizar el conjunto de datos Flags del repositorio sobre Aprendizaje Automatico de la UCI (University of California, Irvine). Este conjunto de datos contiene detalles de diversas naciones y sus banderas. Más información se puede encontrar aquí: http://archive.ics.uci.edu/ml/datasets/Flags"
 
 - Class: text
-  Output: Let's jump right in so you can get a feel for how these special functions work!
+  Output: Vayamos a ver como podemos tener una idea de cómo operan estas funciones especiales!
 
 - Class: cmd_question
-  Output: I've stored the dataset in a variable called flags. Type head(flags) to preview the first six lines (i.e. the 'head') of the dataset.
+  Output: He guardado el conjunto de datos en una variable llamada flags. Escriba head(flags) para previsualizar las primeras seis líneas (es decir, el "encabezado") del conjunto de datos.
   CorrectAnswer: head(flags)
   AnswerTests: omnitest(correctExpr='head(flags)')
-  Hint: Type head(flags) to view the 'head' of the dataset.
+  Hint: Escriba head(flags) para ver el "encabezado" del conjunto de datos.
 
 - Class: cmd_question
-  Output: You may need to scroll up to see all of the output. Now, let's check out the dimensions of the dataset using dim(flags).
+  Output: Puede que tenga que desplazarse hacia arriba para ver toda la salida. Ahora, vamos a ver las dimensiones del conjunto de datos utilizando dim(flags).
   CorrectAnswer: dim(flags)
   AnswerTests: omnitest(correctExpr='dim(flags)')
-  Hint: Type dim(flags) to view the dimensions of the dataset.
+  Hint: Escriba dim(flags) para ver las dimensiones del conjunto de datos.
 
 - Class: text
-  Output: This tells us that there are 194 rows, or observations, and 30 columns, or variables. Each observation is a country and each variable describes some characteristic of that country or its flag. To open a more complete description of the dataset in a separate text file, type viewinfo() when you are back at the prompt (>).
+  Output: Esto nos dice que hay 194 filas u observaciones, y 30 columnas o variables. Cada observación es un país y con cada  variable se describen algunas características de ese país o de su bandera. Para abrir una descripción más completa del conjunto de datos en un archivo de texto por separado, escriba viewinfo() cuando usted esté de vuelta en el prompt (>).
 
 - Class: cmd_question
-  Output: As with any dataset, we'd like to know in what format the variables have been stored. In other words, what is the 'class' of each variable? What happens if we do class(flags)? Try it out.
+  Output: Como con cualquier conjunto de datos, nos gustaría saber en qué formato se han almacenado las variables. En otras palabras, ¿cuál es la "clase" de cada variable? ¿Qué pasa si escribimos class(flags)? Inténtalo.
   CorrectAnswer: class(flags)
   AnswerTests: omnitest(correctExpr='class(flags)')
-  Hint: Type class(flags) to see what happens.
+  Hint: Escriba class(flags) para ver qué pasa.
 
 - Class: text
-  Output: That just tells us that the entire dataset is stored as a 'data.frame', which doesn't answer our question. What we really need is to call the class() function on each individual column. While we could do this manually (i.e. one column at a time) it's much faster if we can automate the process. Sounds like a loop!
+  Output: Eso sólo nos dice que todo el conjunto de datos se almacena como un 'data.frame', lo que no responde a nuestra pregunta. Lo que realmente necesitamos es llamar a la función de clase() en cada una de las columnas individualmente. Si bien podríamos hacerlo manualmente (es decir, una columna a la vez) es mucho más rápido si podemos automatizar el proceso. Esto suena como un ciclo!
 
 - Class: text
-  Output: The lapply() function takes a list as input, applies a function to each element of the list, then returns a list of the same length as the original one. Since a data frame is really just a list of vectors (you can see this with as.list(flags)), we can use lapply() to apply the class() function to each column of the flags dataset. Let's see it in action!
+  Output: La función lapply() toma una lista como entrada, se aplica una función a cada elemento de la lista, y a continuación, devuelve una lista con los resultados, de la misma longitud que la original. Tomando en cuenta que una trama de datos (ó data.frame) es en realidad una lista de vectores (esto se puede verificar con as.list(flags)), podemos utilizar lapply() para aplicar la función class() a cada columna del conjunto de datos flags. Vamos a verlo en acción!
 
 - Class: cmd_question
-  Output: Type cls_list <- lapply(flags, class) to apply the class() function to each column of the flags dataset and store the result in a variable called cls_list. Note that you just supply the name of the function you want to apply (i.e. class), without the usual parentheses after it.
+  Output: Escriba cls_list <- lapply(flags, class) para aplicar la función class() para cada columna del conjunto de datos flags y guardar el resultado en una variable llamada cls_list. Tenga en cuenta que, en el segundo argumento de la función, solo se proporciona el nombre de la función que desea aplicar (es decir, class), sin los paréntesis habituales después de ella.
   CorrectAnswer: cls_list <- lapply(flags, class)
   AnswerTests: omnitest(correctExpr='cls_list <- lapply(flags, class)')
-  Hint: Type cls_list <- lapply(flags, class) to apply the class() function to each column of our dataset and store the result in a variable called cls_list.
+  Hint: Escriba cls_list <- lapply(flags, class) para aplicar la función class() a cada columna de nuestra base de datos y almacenar el resultado en una variable llamada cls_list.
 
 - Class: cmd_question
-  Output: Type cls_list to view the result.
+  Output: Escriba cls_list para ver el resultado.
   CorrectAnswer: cls_list
   AnswerTests: omnitest(correctExpr='cls_list')
-  Hint: Type cls_list to view the result.
+  Hint: Escriba cls_list para ver el resultado.
 
 - Class: cmd_question
-  Output: The 'l' in 'lapply' stands for 'list'. Type class(cls_list) to confirm that lapply() returned a list.
+  Output: El 'l' en 'lapply' es sinónimo de 'lista'. Escriba class(cls_list) para confirmar que lapply() devuelve una lista.
   CorrectAnswer: class(cls_list)
   AnswerTests: omnitest(correctExpr='class(cls_list)')
-  Hint: Type class(cls_list) to confirm that lapply() returned a list.
+  Hint: Escriba class(cls_list) para confirmar que lapply() devuelve una lista.
 
 - Class: text
-  Output: As expected, we got a list of length 30 -- one element for each variable/column. The output would be considerably more compact if we could represent it as a vector instead of a list.
+  Output: Como era de esperar, nos dieron una lista de longitud 30 - un elemento para cada variable/columna. La salida sería considerablemente más compacta si pudieramos representarla como un vector en lugar de una lista.
 
 - Class: cmd_question
-  Output: You may remember from a previous lesson that lists are most helpful for storing multiple classes of data. In this case, since every element of the list returned by lapply() is a character vector of length one (i.e. "integer" and "vector"), cls_list can be simplified to a character vector. To do this manually, type as.character(cls_list).
+  Output: Usted puede recordar de una lección anterior que las listas son de gran ayuda para el almacenamiento de múltiples clases de datos. En este caso, puesto que cada elemento de la lista devuelta por lapply() es un vector de caracteres de longitud uno (es decir, "integer" y "vector"), cls_list se puede simplificar a un vector de caracteres. Para hacerlo de forma manual, escriba as.character(cls_list).
   CorrectAnswer: as.character(cls_list)
   AnswerTests: omnitest(correctExpr='as.character(cls_list)')
-  Hint: Type as.character(cls_list) to coerce cls_list to a character vector.
+  Hint: Escriba as.character(cls_list) para coaccionar o transformar cls_list a un vector de caracteres.
 
 - Class: cmd_question
-  Output: sapply() allows you to automate this process by calling lapply() behind the scenes, but then attempting to simplify (hence the 's' in 'sapply') the result for you. Use sapply() the same way you used lapply() to get the class of each column of the flags dataset and store the result in cls_vect. If you need help, type ?sapply to bring up the documentation.
+  Output: sapply() permite automatizar este proceso llamando lapply() detrás de escena, pero luego intenta simplificar (de ahí la 's' en 'sapply') el resultado para usted. Utilice sapply() de la misma manera que utilizó lapply() para obtener la clase de cada columna del conjunto de datos banderas y almacene el resultado en cls_vect. Si necesita ayuda, escriba ?sapply para que aparezca la documentación.
   CorrectAnswer: cls_vect <- sapply(flags, class)
   AnswerTests: omnitest(correctExpr='cls_vect <- sapply(flags, class)')
-  Hint: Type cls_vect <- sapply(flags, class) to store the column classes in a character vector called cls_vect.
+  Hint: Escriba cls_vect <- sapply(flags, class) para almacenar las clases de columna en un vector de caracteres llamado cls_vect.
 
 - Class: cmd_question
-  Output: Use class(cls_vect) to confirm that sapply() simplified the result to a character vector.
+  Output: Utilice class(cls_vect) para confirmar que sapply() simplifica el resultado a un vector de caracteres.
   CorrectAnswer: class(cls_vect)
   AnswerTests: omnitest(correctExpr='class(cls_vect)')
-  Hint: Type class(cls_vect) to confirm that sapply() returned a character vector.
+  Hint: Escriba class(cls_vect) para confirmar que sapply() devuelve un vector de caracteres.
 
 - Class: text
-  Output: In general, if the result is a list where every element is of length one, then sapply() returns a vector. If the result is a list where every element is a vector of the same length (> 1), sapply() returns a matrix. If sapply() can't figure things out, then it just returns a list, no different from what lapply() would give you.
+  Output: En general, si el resultado es una lista donde cada elemento es de longitud uno, entonces sapply() devuelve un vector. Si el resultado es una lista donde cada elemento es un vector de la misma longitud (> 1), sapply() devuelve una matriz. Si sapply() no puede entender la estructura del resultado, entonces sólo se devolvera una lista, en este caso no hay diferencia de lo que lapply() le daría.
 
 - Class: text
-  Output: Let's practice using lapply() and sapply() some more!
+  Output: Vamos a practicar el uso lapply() y sapply() un poco más!
 
 - Class: text
-  Output: Columns 11 through 17 of our dataset are indicator variables, each representing a different color. The value of the indicator variable is 1 if the color is present in a country's flag and 0 otherwise.
+  Output: Las columnas 11 a la 17 de nuestra base de datos son variables indicadoras que representan cada una un color diferente. El valor de la variable es 1 si el color está presente en la bandera de un país y 0 en caso contrario.
 
 - Class: cmd_question
-  Output:  Therefore, if we want to know the total number of countries (in our dataset) with, for example, the color orange on their flag, we can just add up all of the 1s and 0s in the 'orange' column. Try sum(flags$orange) to see this.
+  Output:  Por lo tanto, si queremos saber el número total de países (en nuestro conjunto de datos) con, por ejemplo, el color naranja en su bandera, podemos simplemente sumar todos los unos y ceros en la columna "orange". Intente con Try sum(flags$orange) para ver esto.
   CorrectAnswer: sum(flags$orange)
   AnswerTests: omnitest(correctExpr='sum(flags$orange)')
-  Hint: Use sum(flags$orange) to add up all of the 1s and 0s in the 'orange' column.
+  Hint: Utilice sum(flags$orange) para sumar todos los 1s en la columna "orange".
 
 - Class: text
-  Output: Now we want to repeat this operation for each of the colors recorded in the dataset.
+  Output: Ahora queremos repetir esta operación para cada uno de los colores registrados en el conjunto de datos.
 
 - Class: cmd_question
-  Output: First, use flag_colors <- flags[, 11:17] to extract the columns containing the color data and store them in a new data frame called flag_colors. (Note the comma before 11:17. This subsetting command tells R that we want all rows, but only columns 11 through 17.)
+  Output:  En primer lugar, utilice flag_colors <- flags[, 11:17] para extraer las columnas que contienen los datos de color y almacenarlos en un nuevo marco de datos llamado flag_colors. (Note la coma antes de 11:17. Este comando le dice a R que queremos todas las filas, pero sólo las columnas 11 a 17).
   CorrectAnswer: flag_colors <- flags[, 11:17]
   AnswerTests: omnitest(correctExpr='flag_colors <- flags[, 11:17]')
-  Hint: flag_colors <- flags[, 11:17] will get the job done!
-
+  Hint: flag_colors <- flags[, 11:17] conseguirá hacer el trabajo!
+  
 - Class: cmd_question
-  Output: Use the head() function to look at the first 6 lines of flag_colors.
+  Output: Utilice la función head() para ver las primeras 6 líneas de flag_colors.
   CorrectAnswer: head(flag_colors)
   AnswerTests: omnitest(correctExpr='head(flag_colors)')
-  Hint: head(flag_colors) will display the first six lines of flag_colors.
+  Hint: head(flag_colors) mostrará los primeros seis líneas de flag_colors.
 
 - Class: cmd_question
-  Output: To get a list containing the sum of each column of flag_colors, call the lapply() function with two arguments. The first argument is the object over which we are looping (i.e. flag_colors) and the second argument is the name of the function we wish to apply to each column (i.e. sum). Remember that the second argument is just the name of the function with no parentheses, etc.
+  Output: Para obtener una lista que contenga la suma de cada columna de flag_colors, llame a la función lapply() con dos argumentos. El primer argumento es el objeto sobre el cual queremos hacer el bucle bucle (es decir: flag_colors) y el segundo argumento es el nombre de la función que queremos aplicar a cada columna (es decir: sum). Recuerde que el segundo argumento es sólo el nombre de la función sin paréntesis, etc.
   CorrectAnswer: lapply(flag_colors, sum)
   AnswerTests: omnitest(correctExpr='lapply(flag_colors, sum)')
-  Hint: Use lapply(flag_colors, sum) to return the sum of each column.
+  Hint: Utilice lapply(flag_colors, sum) para devolver la suma de cada columna.
 
 - Class: text
-  Output: This tells us that of the 194 flags in our dataset, 153 contain the color red, 91 contain green, 99 contain blue, and so on.
+  Output: Esto nos dice que de las 194 banderas en nuestra base de datos, 153 contienen el color rojo, 91 contienen verde, 99 contienen azul, y así sucesivamente.
 
 - Class: cmd_question
-  Output: The result is a list, since lapply() always returns a list. Each element of this list is of length one, so the result can be simplified to a vector by calling sapply() instead of lapply(). Try it now.
+  Output: El resultado es una lista, ya lapply() siempre devuelve una lista. Cada elemento de esta lista es de longitud uno, por lo que el resultado se puede simplificar a un vector llamando sapply() en lugar de lapply(). Inténtalo ahora.
   CorrectAnswer: sapply(flag_colors, sum)
   AnswerTests: omnitest(correctExpr='sapply(flag_colors, sum)')
-  Hint: Use sapply(flag_colors, sum) to return a vector of column sums.
+  Hint: Utilice sapply(flag_colors, sum) para devolver un vector de las sumas de las columnas.
 
 - Class: text
-  Output: Perhaps it's more informative to find the proportion of flags (out of 194) containing each color. Since each column is just a bunch of 1s and 0s, the arithmetic mean of each column will give us the proportion of 1s. (If it's not clear why, think of a simpler situation where you have three 1s and two 0s -- (1 + 1 + 1 + 0 + 0)/5 = 3/5 = 0.6).
+  Output: Quizás sería más informativo encontrar la proporción de banderas (de un total de 194) que contiene cada color. Dado que cada columna es sólo un montón de 1s y 0s, la media aritmética de cada columna nos dará la proporción de 1s. (Si no está claro el por qué, piense en una situación más simple, donde tienes tres 1s y dos 0s - (1 + 1 + 1 + 0 + 0) / 5 = 3.5 = 0.6).
 
 - Class: cmd_question
-  Output: Use sapply() to apply the mean() function to each column of flag_colors. Remember that the second argument to sapply() should just specify the name of the function (i.e. mean) that you want to apply.
+  Output: Use sapply() para aplicar la función de mean() a cada columna de flag_colors. Recuerde que en el segundo argumento de sapply() simplemente debe especificar el nombre de la función (es decir mean) que desea aplicar.
   CorrectAnswer: sapply(flag_colors, mean)
   AnswerTests: omnitest(correctExpr='sapply(flag_colors, mean)')
-  Hint: sapply(flag_colors, mean) will do the trick!
+  Hint: sapply(flag_colors, mean) hará el truco!
 
 - Class: text
-  Output: In the examples we've looked at so far, sapply() has been able to simplify the result to vector. That's because each element of the list returned by lapply() was a vector of length one. Recall that sapply() instead returns a matrix when each element of the list returned by lapply() is a vector of the same length (> 1).
+  Output: En los ejemplos que hemos visto hasta ahora, sapply() ha sido capaz de simplificar el resultado a un vector. Eso es porque cada elemento de la lista devuelta por lapply() era un vector de longitud uno. Recordemos que sapply() intentará devolver una matriz cuando cada elemento de la lista devuelta por lapply() sea un vector de la misma longitud (> 1).
 
 - Class: cmd_question
-  Output: To illustrate this, let's extract columns 19 through 23 from the flags dataset and store the result in a new data frame called flag_shapes. flag_shapes <- flags[, 19:23] will do it.
+  Output: Para ilustrar esto, vamos a extraer las columnas 19 a 23 del conjunto de datos flags y guardaremos el resultado en un nuevo data.frame llamado flag_shapes. flag_shapes <- flags[, 19:23] lo hará.
   CorrectAnswer: flag_shapes <- flags[, 19:23]
   AnswerTests: omnitest(correctExpr='flag_shapes <- flags[, 19:23]')
-  Hint: flag_shapes <- flags[, 19:23] will save columns 19 through 23 in a new variable.
+  Hint: flag_shapes <- flags[, 19:23] guardara las columnas 19 a la 23 en una nueva variable.
 
 - Class: text
-  Output: Each of these columns (i.e. variables) represents the number of times a particular shape or design appears on a country's flag. We are interested in the minimum and maximum number of times each shape or design appears.
+  Output: Cada una de estas columnas (es decir, variables) representa el número de veces que una forma o diseño en particular aparece en la bandera de un país. Estamos interesados ​​en el número mínimo y máximo de veces que aparece cada forma o diseño.
 
 - Class: cmd_question
-  Output: The range() function returns the minimum and maximum of its first argument, which should be a numeric vector. Use lapply() to apply the range function to each column of flag_shapes. Don't worry about storing the result in a new variable. By now, we know that lapply() always returns a list.
+  Output: La función range() devuelve el mínimo y el máximo de su primer argumento, que debe ser un vector numérico. Utilice lapply() para aplicar la función de rango a cada columna de flag_shapes. No te preocupes por guardar el resultado en una nueva variable. Por ahora, sabemos que lapply() siempre devuelve una lista.
   CorrectAnswer: lapply(flag_shapes, range)
   AnswerTests: omnitest(correctExpr='lapply(flag_shapes, range)')
-  Hint: Try lapply(flag_shapes, range) to apply the range() function to each column of flag_shapes.
+  Hint: Pruebe llapply(flag_shapes, range) para aplicar la función range() para cada columna de flag_shapes.
 
 - Class: cmd_question
-  Output: Do the same operation, but using sapply() and store the result in a variable called shape_mat.
+  Output: Realice la misma operación, pero utilizando sapply() y almacena el resultado en una variable llamada shape_mat.
   CorrectAnswer: shape_mat <- sapply(flag_shapes, range)
   AnswerTests: omnitest(correctExpr='shape_mat <- sapply(flag_shapes, range)')
-  Hint: shape_mat <- sapply(flag_shapes, range) will apply the range() function to each column of flag_shapes and store the result in shape_mat.
+  Hint: shape_mat <- sapply(flag_shapes, range) aplicará la función range() para cada columna de flag_shapes y almacenará el resultado en shape_mat.
 
 - Class: cmd_question
-  Output: View the contents of shape_mat.
+  Output: Vea el contenido de shape_mat.
   CorrectAnswer: shape_mat
   AnswerTests: any_of_exprs('shape_mat', 'print(shape_mat)')
-  Hint: Type shape_mat to view its contents.
+  Hint: Escriba shape_mat para ver su contenido.
 
 - Class: text
-  Output: Each column of shape_mat gives the minimum (row 1) and maximum (row 2) number of times its respective shape appears in different flags.
+  Output: Cada columna de shape_mat da el mínimo (fila 1) y máximo (fila 2) número de veces que aparece su respectiva forma o diseño en las diferentes banderas.
 
 - Class: cmd_question
-  Output: Use the class() function to confirm that shape_mat is a matrix.
+  Output: Utilice la función de la class() para confirmar que shape_mat es una matriz.
   CorrectAnswer: class(shape_mat)
   AnswerTests: omnitest(correctExpr='class(shape_mat)')
-  Hint: class(shape_mat) returns the class of shape_mat.
+  Hint: class() devuelve la clase de shape_mat.
 
 - Class: text
-  Output: As we've seen, sapply() always attempts to simplify the result given by lapply(). It has been successful in doing so for each of the examples we've looked at so far. Let's look at an example where sapply() can't figure out how to simplify the result and thus returns a list, no different from lapply().
+  Output: Como hemos visto, sapply() siempre intenta simplificar el resultado dado por lapply(). Esta función ha tenido éxito en hacer esto para cada uno de los ejemplos que hemos visto hasta ahora. Veamos un ejemplo donde sapply() no puede encontrar la manera de simplificar el resultado por lo que devuelve una lista, es decir, no es diferente de lapply().
 
 - Class: cmd_question
-  Output: When given a vector, the unique() function returns a vector with all duplicate elements removed. In other words, unique() returns a vector of only the 'unique' elements. To see how it works, try unique(c(3, 4, 5, 5, 5, 6, 6)).
+  Output: Cuando se le dá un vector, la función unique() devuelve un vector con todos los elementos duplicados eliminados. En otras palabras, unique() devuelve un vector de sólo los elementos "únicos". Para ver cómo funciona, intente unique(c(3, 4, 5, 5, 5, 6, 6)).
   CorrectAnswer: unique(c(3, 4, 5, 5, 5, 6, 6))
   AnswerTests: omnitest(correctExpr='unique(c(3, 4, 5, 5, 5, 6, 6))')
-  Hint: Do unique(c(3, 4, 5, 5, 5, 6, 6)) to see how the unique() function works.
+  Hint: Haga unique(c(3, 4, 5, 5, 5, 6, 6)) para ver cómo funciona la única unique().
 
 - Class: cmd_question
-  Output: We want to know the unique values for each variable in the flags dataset. To accomplish this, use lapply() to apply the unique() function to each column in the flags dataset, storing the result in a variable called unique_vals.
+  Output: Queremos saber los valores únicos para cada variable en el conjunto de datos flags. Para lograr esto, utilice lapply() para aplicar la función unique() para cada columna en el conjunto de datos banderas, almacenando el resultado en una variable llamada unique_vals.
   CorrectAnswer: unique_vals <- lapply(flags, unique)
   AnswerTests: omnitest(correctExpr='unique_vals <- lapply(flags, unique)')
-  Hint: Try unique_vals <- lapply(flags, unique).
+  Hint: Pruebe unique_vals <- lapply(flags, unique).
 
 - Class: cmd_question
-  Output: Print the value of unique_vals to the console.
+  Output: Escriba el valor de unique_vals a la consola.
   CorrectAnswer: unique_vals
   AnswerTests: any_of_exprs('unique_vals', 'print(unique_vals)')
-  Hint: Type unique_vals to view its contents.
+  Hint: Escriba unique_vals para ver su contenido.
 
 - Class: cmd_question
-  Output: "Since unique_vals is a list, you can use what you've learned to determine the length of each element of unique_vals (i.e. the number of unique values for each variable). Simplify the result, if possible. Hint: Apply the length() function to each element of unique_vals."
+  Output: "Dado que unique_vals es una lista, puede usar lo que has aprendido para determinar la longitud de cada elemento de unique_vals (es decir, el número de valores únicos para cada variable) y, si es posible, simplificar el resultado. Sugerencia: Aplica la length() para cada elemento de unique_vals."
   CorrectAnswer: sapply(unique_vals, length)
   AnswerTests: omnitest(correctExpr='sapply(unique_vals, length)')
-  Hint: Apply the length() function to each element of the unique_vals list using sapply(). Remember, no parentheses after the name of the function you are applying (i.e. length).
+  Hint: Aplique la función length() para cada elemento de la lista unique_vals usando sapply(). Recuerde, no hay paréntesis después del nombre de la función que está solicitando (es decir length).
 
 - Class: text
-  Output: The fact that the elements of the unique_vals list are all vectors of *different* length poses a problem for sapply(), since there's no obvious way of simplifying the result.
+  Output: El hecho de que los elementos de la lista unique_vals son todos los vectores de "diferente" longitud, plantea un problema para sapply(), ya que no hay forma obvia de simplificar el resultado.
 
 - Class: cmd_question
-  Output: Use sapply() to apply the unique() function to each column of the flags dataset to see that you get the same unsimplified list that you got from lapply().
+  Output: Utilice sapply() para aplicar la función unique() para cada columna del conjunto de datos flags para ver que se obtiene la misma lista no simplificada que recibió de lapply().
   CorrectAnswer: sapply(flags, unique)
   AnswerTests: omnitest(correctExpr='sapply(flags, unique)')
-  Hint: Use sapply(flags, unique) to apply the unique function to each column of flags, failing to simplify the result.
+  Hint: Utilice sapply(flags, unique) para aplicar la función unique para cada columna de flags, observe como falla al simplificar el resultado.
 
 - Class: text
-  Output: Occasionally, you may need to apply a function that is not yet defined, thus requiring you to write your own. Writing functions in R is beyond the scope of this lesson, but let's look at a quick example of how you might do so in the context of loop functions.
+  Output: Ocasionalmente, puede que tenga que aplicar una función que aún no está definida, por lo que se requiere que usted escriba su propia función para ello. La escritura de funciones en R está más allá del alcance de esta lección, pero vamos a ver un ejemplo rápido de cómo puede hacerlo en el contexto de las funciones del lazo.
 
 - Class: text
-  Output: Pretend you are interested in only the second item from each element of the unique_vals list that you just created. Since each element of the unique_vals list is a vector and we're not aware of any built-in function in R that returns the second element of a vector, we will construct our own function.
+  Output: Imagine usted que está interesado en el segundo artículo de cada elemento de la lista unique_vals que acaba de crear. Dado que cada elemento de la lista unique_vals es un vector y no estamos al tanto de alguna función incorporada en R que devuelva el segundo elemento de un vector, vamos a construir nuestra propia función.
 
 - Class: cmd_question
-  Output: lapply(unique_vals, function(elem) elem[2]) will return a list containing the second item from each element of the unique_vals list. Note that our function takes one argument, elem, which is just a 'dummy variable' that takes on the value of each element of unique_vals, in turn.
+  Output: lapply(unique_vals, function(elem) elem[2]) devolverá una lista que contiene el segundo artículo de cada elemento de la lista unique_vals. Tenga en cuenta que nuestra función toma un argumento, elem, que es sólo una "variable dummy" que toma el valor de cada elemento de unique_vals, por turnos.
   CorrectAnswer: lapply(unique_vals, function(elem) elem[2])
   AnswerTests: calculates_same_value('lapply(unique_vals, function(elem) elem[2])')
-  Hint: Use lapply(unique_vals, function(elem) elem[2]) to return a list containing the second item from each element of the unique_vals list.
+  Hint: Utilice lapply(unique_vals, function(elem) elem[2]) para devolver una lista que contenga el segundo elemento de cada vector de la lista unique_vals.
 
 - Class: text
-  Output: The only difference between previous examples and this one is that we are defining and using our own function right in the call to lapply(). Our function has no name and disappears as soon as lapply() is done using it. So-called 'anonymous functions' can be very useful when one of R's built-in functions isn't an option.
+  Output: La única diferencia entre los ejemplos anteriores y éste es que estamos definiendo y utilizando nuestra propia función para usarla en la llamada a lapply(). Nuestra función no tiene nombre y desaparece tan pronto como lapply() termina de usarla. Las llamados 'funciones anónimas' puede ser muy útil cuando ninguna de las funciones incorporadas de R es una opción.
 
 - Class: text
-  Output: In this lesson, you learned how to use the powerful lapply() and sapply() functions to apply an operation over the elements of a list. In the next lesson, we'll take a look at some close relatives of lapply() and sapply().
+  Output: En esta lección, ha aprendido a usar el poderosas funciones lapply() y sapply () para aplicar una operación sobre los elementos de una lista. En la siguiente lección, vamos a echar un vistazo a algunos parientes cercanos de lapply() y sapply().
 
 - Class: mult_question
-  Output: Would you like to inform someone about your successful completion of this lesson?
+  Output: ¿Te gustaría informar a alguien acerca de su finalización con éxito de esta lección?
   CorrectAnswer: NULL
   AnswerChoices: Yes; No
   AnswerTests: notify()
