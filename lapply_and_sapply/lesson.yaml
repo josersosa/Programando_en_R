@@ -76,7 +76,7 @@
   Hint: Escriba as.character(cls_list) para coaccionar o transformar cls_list a un vector de caracteres.
 
 - Class: cmd_question
-  Output: sapply() permite automatizar este proceso llamando lapply() detrás de escena, pero luego intenta simplificar (de ahí la 's' en 'sapply') el resultado para usted. Utilice sapply() de la misma manera que utilizó lapply() para obtener la clase de cada columna del conjunto de datos banderas y almacene el resultado en cls_vect. Si necesita ayuda, escriba ?sapply para que aparezca la documentación.
+  Output: sapply() permite automatizar este proceso llamando lapply() detrás de escena, pero luego intenta simplificar (de ahí la 's' en 'sapply') el resultado para usted. Utilice sapply() de la misma manera que utilizó lapply() para obtener la clase de cada columna del conjunto de datos flags y almacene el resultado en cls_vect. Si necesita ayuda, escriba ?sapply para que aparezca la documentación.
   CorrectAnswer: cls_vect <- sapply(flags, class)
   AnswerTests: omnitest(correctExpr='cls_vect <- sapply(flags, class)')
   Hint: Escriba cls_vect <- sapply(flags, class) para almacenar las clases de columna en un vector de caracteres llamado cls_vect.
@@ -118,7 +118,7 @@
   Hint: head(flag_colors) mostrará los primeros seis líneas de flag_colors.
 
 - Class: cmd_question
-  Output: Para obtener una lista que contenga la suma de cada columna de flag_colors, llame a la función lapply() con dos argumentos. El primer argumento es el objeto sobre el cual queremos hacer el bucle bucle (es decir: flag_colors) y el segundo argumento es el nombre de la función que queremos aplicar a cada columna (es decir: sum). Recuerde que el segundo argumento es sólo el nombre de la función sin paréntesis, etc.
+  Output: Para obtener una lista que contenga la suma de cada columna de flag_colors, llame a la función lapply() con dos argumentos. El primer argumento es el objeto sobre el cual queremos hacer el bucle bucle (es decir flag_colors) y el segundo argumento es el nombre de la función que queremos aplicar a cada columna (es decir sum). Recuerde que el segundo argumento es sólo el nombre de la función sin paréntesis, etc.
   CorrectAnswer: lapply(flag_colors, sum)
   AnswerTests: omnitest(correctExpr='lapply(flag_colors, sum)')
   Hint: Utilice lapply(flag_colors, sum) para devolver la suma de cada columna.
@@ -190,7 +190,7 @@
   Hint: Haga unique(c(3, 4, 5, 5, 5, 6, 6)) para ver cómo funciona la única unique().
 
 - Class: cmd_question
-  Output: Queremos saber los valores únicos para cada variable en el conjunto de datos flags. Para lograr esto, utilice lapply() para aplicar la función unique() para cada columna en el conjunto de datos banderas, almacenando el resultado en una variable llamada unique_vals.
+  Output: Queremos saber los valores únicos para cada variable en el conjunto de datos flags. Para lograr esto, utilice lapply() para aplicar la función unique() para cada columna en el conjunto de datos flags, almacenando el resultado en una variable llamada unique_vals.
   CorrectAnswer: unique_vals <- lapply(flags, unique)
   AnswerTests: omnitest(correctExpr='unique_vals <- lapply(flags, unique)')
   Hint: Pruebe unique_vals <- lapply(flags, unique).
@@ -229,10 +229,10 @@
   Hint: Utilice lapply(unique_vals, function(elem) elem[2]) para devolver una lista que contenga el segundo elemento de cada vector de la lista unique_vals.
 
 - Class: text
-  Output: La única diferencia entre los ejemplos anteriores y éste es que estamos definiendo y utilizando nuestra propia función para usarla en la llamada a lapply(). Nuestra función no tiene nombre y desaparece tan pronto como lapply() termina de usarla. Las llamados 'funciones anónimas' puede ser muy útil cuando ninguna de las funciones incorporadas de R es una opción.
+  Output: La única diferencia entre los ejemplos anteriores y éste es que estamos definiendo y utilizando nuestra propia función para usarla en la llamada a lapply(). Nuestra función no tiene nombre y desaparece tan pronto como lapply() termina de usarla. Las llamados 'funciones anónimas' puede ser muy útiles cuando ninguna de las funciones incorporadas de R es una opción.
 
 - Class: text
-  Output: En esta lección, ha aprendido a usar el poderosas funciones lapply() y sapply () para aplicar una operación sobre los elementos de una lista. En la siguiente lección, vamos a echar un vistazo a algunos parientes cercanos de lapply() y sapply().
+  Output: En esta lección, ha aprendido a usar el poderosas funciones lapply() y sapply() para aplicar una operación sobre los elementos de una lista. En la siguiente lección, vamos a echar un vistazo a algunos parientes cercanos de lapply() y sapply().
 
 - Class: mult_question
   Output: ¿Te gustaría informar a alguien acerca de su finalización con éxito de esta lección?
