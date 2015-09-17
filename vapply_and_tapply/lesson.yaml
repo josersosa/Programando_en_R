@@ -61,9 +61,10 @@
   Output: Como analista de datos, a menudo deseará dividir sus datos en grupos, en función del valor de una variable y luego aplicar una función a cada grupo. La siguiente función que veremos, tapply(), hace exactamente eso.
   
 - Class: cmd_question
-  Output: Utilice ?tapply para desplegar la documentación de esta función.
+  Output: Utilice ?tapply para desplegar la documentación de esta función. 
+  CorrectAnswer: ?tapply
   AnswerTests: any_of_exprs('?tapply', 'help(tapply)')
-  Hint: Levante el archivo de ayuda con ?tapply.
+  Hint: Levante el archivo de ayuda con ?tapply
 
 - Class: cmd_question
   Output: La variable 'landmass' en nuestro conjunto de datos toma valores enteros entre 1 y 6, cada uno de los cuales representa una parte diferente del mundo (masas de tierra o masas continentales). Utilice la table(flags$landmass) para ver cuántas banderas/países se clasifican en cada grupo.
