@@ -44,7 +44,7 @@ uninstall_course("Programando_en_R")
 
 **Avance del proyecto**
 
-Hasta ahora, este proyecto tiene una avance del **100%** en la traducción. Están traducidas todas las lecciones de un total de 12 lecciones del curso original [R_Programming_Alt](https://github.com/swirldev/swirl_courses/tree/master/R_Programming_Alt)..
+Hasta ahora, este proyecto tiene una avance del **100%** en la traducción. Están traducidas todas las lecciones de un total de 12 del curso original [R_Programming_Alt](https://github.com/swirldev/swirl_courses/tree/master/R_Programming_Alt)..
 
 
 **TODOs**
@@ -54,5 +54,5 @@ Ahora voy a incluir las lecciones del curso [R Programming](https://github.com/s
 - Functions
 - Base_Graphics
 
-Por otra parte, intentaré sustituir el envío del correo al final de cada lección por una conección a alguna aula virtual basada en moodle.
+Por otra parte, intentaré incluir al final de cada lección, aparte del envío del correo, la opción de calificar mediante una conección a alguna aula virtual basada en moodle.
 
