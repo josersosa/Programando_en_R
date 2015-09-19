@@ -11,7 +11,8 @@
 
 - Class: text
   Output: Si en algún momento desea obtener más información sobre un tema concreto relacionado con
-     R, puede escribir help.start() en el indicador >, se abrirá un menú de recursos (ya sea dentro o RStudio su navegador web por defecto, dependiendo de su configuración).
+     R, puede escribir help.start() en el indicador >, se abrirá un menú de recursos (ya sea dentro o RStudio 
+     su navegador web por defecto, dependiendo de su configuración).
      Como alternativa, una simple búsqueda en Internet a menudo da la respuesta que estás buscando.
 
 - Class: cmd_question
@@ -21,25 +22,35 @@
   Hint: Escribe 5 + 7 y pulsa Intro.
 
 - Class: text
-  Output: R simplemente imprime el resultado de 12 por defecto. Sin embargo, R es un lenguaje de programación y a menudo la razón por la que utiliza un lenguaje de programación, en oposición a una calculadora, es para automatizar algunos procesos o evitar repeticiones innecesarias.
+  Output: R simplemente imprime el resultado de 12 por defecto. Sin embargo, R es un lenguaje de programación y 
+  a menudo la razón por la que utiliza un lenguaje de programación, en oposición a una calculadora, es para 
+  automatizar algunos procesos o evitar repeticiones innecesarias.
 
 - Class: text
-  Output: En este caso, es posible que desee utilizar nuestro resultado de arriba en un segundo cálculo. En lugar de volver a escribir 5 + 7 cada vez que lo necesitamos, podemos simplemente crear una nueva variable que almacena el resultado.
+  Output: En este caso, es posible que desee utilizar nuestro resultado de arriba en un segundo cálculo. En lugar 
+  de volver a escribir 5 + 7 cada vez que lo necesitamos, podemos simplemente crear una nueva variable que almacena 
+  el resultado.
 
 - Class: text
-  Output: 'La forma en que asigna un valor a una variable en R es mediante el uso del operador de asignación, que es sólo un símbolo ''menor que'' seguido de un signo ''menos''. Eso se parece a esto: <-'
+  Output: 'La forma en que asigna un valor a una variable en R es mediante el uso del operador de asignación, que 
+  es sólo un símbolo ''menor que'' seguido de un signo ''menos''. Eso se parece a esto: <-'
 
 - Class: text
-  Output: Piense en el operador de asignación como una flecha. Usted está asignando el valor en el lado derecho de la flecha para el nombre de la variable en el lado izquierdo de la flecha.
+  Output: Piense en el operador de asignación como una flecha. Usted está asignando el valor en el lado derecho de 
+  la flecha para el nombre de la variable en el lado izquierdo de la flecha.
 
 - Class: cmd_question
-  Output: Para asignar el resultado de 5 + 7 a una nueva variable llamada x, escriba x <- 5 + 7. Esto puede leerse como 'x toma el valor de 5 más 7'. Dese una oportunidad ahora.
+  Output: Para asignar el resultado de 5 + 7 a una nueva variable llamada x, escriba x <- 5 + 7. Esto puede leerse 
+  como 'x toma el valor de 5 más 7'. Dese una oportunidad ahora.
   CorrectAnswer: x <- 5 + 7
   AnswerTests: any_of_exprs('x <- 5 + 7', 'x <- 7 + 5')
-  Hint: Escriba x <- 5 + 7. Es importante incluir un único espacio a cada lado de el operador de asignación, pero no ponga un espacio entre el `<` y el `-` que forman la flecha.
+  Hint: Escriba x <- 5 + 7. Es importante incluir un único espacio a cada lado de el operador de asignación, pero 
+  no ponga un espacio entre el `<` y el `-` que forman la flecha.
     
 - Class: text
-  Output: Se dará cuenta de que R no imprime el resultado de 12 en esta ocasión. cuando se utiliza el operador de asignación, R asume que no quieres ver el resultado inmediatamente, sino que tiene la intención de utilizar el resultado para otra cosa más adelante.
+  Output: Se dará cuenta de que R no imprime el resultado de 12 en esta ocasión. cuando se utiliza el operador 
+  de asignación, R asume que no quieres ver el resultado inmediatamente, sino que tiene la intención de utilizar 
+  el resultado para otra cosa más adelante.
     
 - Class: cmd_question
   Output: Para ver el contenido de la variable x, simplemente escriba x y pulse Intro. Intentalo ahora.
@@ -51,7 +62,8 @@
   Output: Ahora, almacene el resultado de x - 3 en una variable llamada nueva y.
   CorrectAnswer: y <- x - 3
   AnswerTests: omnitest(correctExpr='y <- x - 3')
-  Hint: Escriba y <- x - 3 y pulse Intro. Si usted utiliza x - 3 o x-3 es de preferencia personal, pero es buena costumbre de incluir un espacio a cada lado del operador de asignación.
+  Hint: Escriba y <- x - 3 y pulse Intro. Si usted utiliza x - 3 o x-3 es de preferencia personal, pero es buena 
+  costumbre de incluir un espacio a cada lado del operador de asignación.
 
 - Class: cmd_question
   Output: ¿Cuál es el valor de y? Escriba y para averiguarlo.
@@ -60,16 +72,24 @@
   Hint: Escriba y y presione Intro.
 
 - Class: text
-  Output: Ahora, vamos a crear una pequeña colección de números llamados un vector. Cualquier objeto que contiene datos se denomina una estructura de datos numéricos y los vectores son de las más simples tipos de estructuras de datos en R. De hecho, incluso un solo número se considera un vector de longitud uno.
+  Output: Ahora, vamos a crear una pequeña colección de números llamados un vector. Cualquier objeto que contiene 
+  datos se denomina una estructura de datos numéricos y los vectores son de las más simples tipos de estructuras 
+  de datos en R. De hecho, incluso un solo número se considera un vector de longitud uno.
 
 - Class: cmd_question
-  Output: La forma más fácil de crear un vector es con la función c(), que se usa para "concatenar" o "combinar". Para crear un vector que contiene los números 1.1, 9 y 3.14, escriba c(1,1, 9, 3.14). Pruébalo ahora y guarde el resultado en una variable llamada z.
+  Output: La forma más fácil de crear un vector es con la función c(), que se usa para "concatenar" o "combinar". 
+  Para crear un vector que contiene los números 1.1, 9 y 3.14, escriba c(1.1, 9, 3.14). Pruébalo ahora y guarde el 
+  resultado en una variable llamada z.
   CorrectAnswer: z <- c(1.1, 9, 3.14)
   AnswerTests: omnitest(correctExpr='z <- c(1.1, 9, 3.14)')
-  Hint: Ingresando z <- c (1,1, 9, 3.14) asignará el vector (1,1, 9, 3.14) a un nueva variable llamada z. No es necesario Incluir espacios individuales después de las comas en el vector, pero ayuda a que su código se vea menos desordenado y más legible.
+  Hint: Ingresando z <- c (1.1, 9, 3.14) asignará el vector (1.1, 9, 3.14) a un nueva variable llamada z. No es 
+  necesario Incluir espacios individuales después de las comas en el vector, pero ayuda a que su código se vea 
+  menos desordenado y más legible.
 
 - Class: cmd_question
-  Output: En cualquier momento usted puede tener preguntas acerca de una función en particular, puede acceder a los archivos de ayuda incorporada de R a través del comando `?`. Por ejemplo, si desea más información de la función c(), escriba ?c sin los paréntesis que normalmente siguen al nombre de una función. Dese una oportunidad.
+  Output: En cualquier momento usted puede tener preguntas acerca de una función en particular, puede acceder a 
+  los archivos de ayuda incorporada de R a través del comando `?`. Por ejemplo, si desea más información de la 
+  función c(), escriba ?c sin los paréntesis que normalmente siguen al nombre de una función. Dese una oportunidad.
   CorrectAnswer: ?c
   AnswerTests: omnitest(correctExpr='?c')
   Hint: Escriba ?c y pulse Intro. Con ello se abre el archivo de ayuda para la función c().
@@ -81,22 +101,28 @@
   Hint: Escriba z y pulse Intro para ver su contenido.
 
 - Class: cmd_question
-  Output: Usted puede combinar vectores para hacer un nuevo vector. Crear un nuevo vector que contiene z, 555, entonces z de nuevo en ese orden. No asigne este vector a una nueva variable, de modo que sólo podemos ver el resultado inmediatamente.
+  Output: Usted puede combinar vectores para hacer un nuevo vector. Crear un nuevo vector que contiene z, 555, 
+  entonces z de nuevo en ese orden. No asigne este vector a una nueva variable, de modo que sólo podemos ver el 
+  resultado inmediatamente.
   CorrectAnswer: c(z, 555, z)
   AnswerTests: omnitest(correctExpr='c(z, 555, z)')
   Hint: Escriba c (z, 555, z). No crear una nueva variable. Sólo queremos ver el resultado.
 
 - Class: cmd_question
-  Output: 'Vectores numéricos se puede utilizar en expresiones aritméticas. Escriba lo siguiente para ver qué pasa: z * 2 + 100.'
+  Output: 'Vectores numéricos se puede utilizar en expresiones aritméticas. Escriba lo siguiente para ver qué pasa: 
+  z * 2 + 100.'
   CorrectAnswer: z * 2 + 100
   AnswerTests: omnitest(correctExpr='z * 2 + 100')
-  Hint: Introduzca z * 2 + 100, sin asignar el resultado a una variable. El símbolo `*` se utiliza para la multiplicación y comparte una tecla con el número 8 en muchos teclados.
+  Hint: Introduzca z * 2 + 100, sin asignar el resultado a una variable. El símbolo `*` se utiliza para la 
+  multiplicación y comparte una tecla con el número 8 en muchos teclados.
 
 - Class: text
-  Output: En primer lugar, R multiplica cada uno de los tres elementos en z por 2. Entonces se añadieron 100 a cada elemento para obtener el resultado que ves arriba.
+  Output: En primer lugar, R multiplica cada uno de los tres elementos en z por 2. Entonces se añadieron 100 a 
+  cada elemento para obtener el resultado que ves arriba.
 
 - Class: text
-  Output: Otros operadores aritméticos comunes son `+`, `-`, `/` y `^` (donde x ^ 2 significa 'x al cuadrado"). Para tomar la raíz cuadrada, utilice la función sqrt() y tomar el valor absoluto, utilice la función abs().
+  Output: Otros operadores aritméticos comunes son `+`, `-`, `/` y `^` (donde x ^ 2 significa 'x al cuadrado"). 
+  Para tomar la raíz cuadrada, utilice la función sqrt() y tomar el valor absoluto, utilice la función abs().
 
 - Class: cmd_question
   Output: Tome la raíz cuadrada de z - 1 y asignarlo a una nueva variable llamada my_sqrt.
@@ -107,7 +133,8 @@
 - Class: mult_question
   Output: Antes de ver el contenido de la variable my_sqrt, ¿qué crees que contiene?
   CorrectAnswer: un vector de longitud 3
-  AnswerChoices: un vector de longitud 3; un solo número (es decir, un vector de longitud 1); un vector de longitud 0 (es decir, un vector vacío)
+  AnswerChoices: un vector de longitud 3; un solo número (es decir, un vector de longitud 1); un vector 
+  de longitud 0 (es decir, un vector vacío)
   AnswerTests: omnitest(correctVal='un vector de longitud 3')
   Hint: 'Piensa en cómo R manejó la otra operación ''vectorizada'': elemento por elemento.'
 
@@ -118,19 +145,25 @@
   Hint: Sólo tienes que escribir my_sqrt y pulse Intro para ver su valor.
 
 - Class: text
-  Output: Como habrás adivinado, R primero resta 1 de cada elemento de la z, luego tomó la raíz cuadrada de cada elemento. Esto le deja con un vector de la misma longitud que el vector z inicial.
+  Output: Como habrás adivinado, R primero resta 1 de cada elemento de la z, luego tomó la raíz cuadrada de 
+  cada elemento. Esto le deja con un vector de la misma longitud que el vector z inicial.
 
 - Class: cmd_question
   Output: Ahora, cree una variable llamada nueva my_div que obtiene el valor de z dividido por my_sqrt.
   CorrectAnswer: my_div <- z / my_sqrt
   AnswerTests: omnitest(correctExpr='my_div <- z / my_sqrt')
-  Hint: Introduzca my_div <- z / my_sqrt. No se requieren los espacios a ambos lados del signo `/`, pero a menudo puede mejorar la legibilidad haciendo código aparece más despejado. Al final, es una preferencia personal.
+  Hint: Introduzca my_div <- z / my_sqrt. No se requieren los espacios a ambos lados del signo `/`, pero a 
+  menudo puede mejorar la legibilidad haciendo código aparece más despejado. Al final, es una preferencia personal.
   
 - Class: mult_question
   Output: ¿Cuál crees que es la declaración verdadera?
-  CorrectAnswer: El primer elemento de my_div es igual al primer elemento de z dividido por el primer elemento de my_sqrt, y así sucesivamente ...
-  AnswerChoices: El primer elemento de my_div es igual al primer elemento de z dividido por el primer elemento de my_sqrt, y así sucesivamente ...; my_div es un solo número (es decir, un vector de longitud 1); my_div es indefinido
-  AnswerTests: omnitest(correctVal=''El primer elemento de my_div es igual al primer elemento de z dividido por el primer elemento de my_sqrt, y así sucesivamente ...')
+  CorrectAnswer: El primer elemento de my_div es igual al primer elemento de z dividido por el primer elemento 
+  de my_sqrt, y así sucesivamente ...
+  AnswerChoices: El primer elemento de my_div es igual al primer elemento de z dividido por el primer elemento 
+  de my_sqrt, y así sucesivamente ...; my_div es un solo número (es decir, un vector de longitud 1); my_div es 
+  indefinido
+  AnswerTests: omnitest(correctVal='El primer elemento de my_div es igual al primer elemento de z dividido por 
+  el primer elemento de my_sqrt, y así sucesivamente ...')
   Hint: Piense acerca de cómo R maneja las otras operaciones 'vectorizadas' como `+` y `*`.
 
 - Class: cmd_question
@@ -140,49 +173,72 @@
   Hint: Escriba my_div y pulse Intro para ver su contenido.
   
 - Class: text
-  Output: Cuando se le presenten dos vectores de la misma longitud, R simplemente realiza la operación aritmética especificada (`+`, `-`, `*`, etc.) elemento elemento por. Si los vectores son de diferentes longitudes, R 'recicla' el vector más corto hasta que es la misma longitud que el vector más largo.
+  Output: Cuando se le presenten dos vectores de la misma longitud, R simplemente realiza la operación aritmética 
+  especificada (`+`, `-`, `*`, etc.) elemento elemento por. Si los vectores son de diferentes longitudes, 
+  R 'recicla' el vector más corto hasta que es la misma longitud que el vector más largo.
 
 - Class: text
-  Output: Cuando hicimos z * 2 + 100 en nuestro ejemplo anterior, z era un vector de longitud 3, pero técnicamente 2 y 100 son cada uno de vectores de longitud 1.
+  Output: Cuando hicimos z * 2 + 100 en nuestro ejemplo anterior, z era un vector de longitud 3, pero técnicamente 
+  2 y 100 son cada uno de vectores de longitud 1.
 
 - Class: text
-  Output: Detrás de las escenas, R es reciclar, el 2 para hacerlo un vector de 2s y el 100 para hacer un vector de 100s. En otras palabras, cuando usted pide R para calcular z * 2 + 100, lo que realmente se calcula es z * c (2, 2, 2) c + (100, 100, 100).
+  Output: Detrás de las escenas, R es reciclar, el 2 para hacerlo un vector de 2s y el 100 para hacer un vector de 
+  100s. En otras palabras, cuando usted pide R para calcular z * 2 + 100, lo que realmente se calcula es 
+  z * c (2, 2, 2) + c (100, 100, 100).
 
 - Class: cmd_question
-  Output: Para ver otro ejemplo de cómo funciona este vector «reciclado», trate de sumar c(1, 2, 3, 4) y c(0, 10). No te preocupes por guardar el resultado en una nueva variable.
+  Output: Para ver otro ejemplo de cómo funciona este vector «reciclado», trate de sumar c(1, 2, 3, 4) y c(0, 10). 
+  No te preocupes por guardar el resultado en una nueva variable.
   CorrectAnswer: c(1, 2, 3, 4) + c(0, 10)
   AnswerTests: omnitest(correctExpr='c(1, 2, 3, 4) + c(0, 10)')
-  Hint: Escriba c(1, 2, 3, 4) + c(0, 10) en la consola para ver cómo R suma dos vectores de diferente longitud. No asigne el resultado a una variable.
+  Hint: Escriba c(1, 2, 3, 4) + c(0, 10) en la consola para ver cómo R suma dos vectores de diferente longitud. 
+  No asigne el resultado a una variable.
 
 - Class: text
-  Output: Si la longitud del vector más corto no divide uniformemente en la longitud del vector ya, R se seguirá aplicando el método «reciclado», pero lanzará una advertencia para hacerle saber algo sospechoso podría estar pasando.
+  Output: Si la longitud del vector más corto no divide uniformemente en la longitud del vector ya, R se 
+  seguirá aplicando el método «reciclado», pero lanzará una advertencia para hacerle saber algo sospechoso podría 
+  estar pasando.
 
 - Class: cmd_question
   Output: Trate c(1, 2, 3, 4) + c(0, 10, 100) para un ejemplo.
   CorrectAnswer: c(1, 2, 3, 4) + c(0, 10, 100)
   AnswerTests: omnitest(correctExpr='c(1, 2, 3, 4) + c(0, 10, 100)')
-  Hint: Escriba c(1, 2, 3, 4) + c(0, 10, 100) para ver cómo maneja R la suma de dos vectores, cuando la longitud del vector más corto lo repite uniformemente en la longitud del vector más largo. No te preocupes por asignar el resultado a una variable.
+  Hint: Escriba c(1, 2, 3, 4) + c(0, 10, 100) para ver cómo maneja R la suma de dos vectores, cuando la longitud 
+  del vector más corto lo repite uniformemente en la longitud del vector más largo. No te preocupes por asignar el 
+  resultado a una variable.
 
 - Class: text
   Output: Antes de concluir esta lección, me gustaría mostrarte un par de trucos para ahorrar tiempo.
 
 - Class: text
-  Output: A principios de la lección, z multiplica * 2 + 100. Supongamos que has cometido un error y que te referías a sumar 1.000 en lugar de 100. Usted podría volver a escribir la expresión, o ...
+  Output: A principios de la lección, z multiplica * 2 + 100. Supongamos que has cometido un error y que te 
+  referías a sumar 1.000 en lugar de 100. Usted podría volver a escribir la expresión, o ...
 
 - Class: cmd_question
-  Output: En muchos entornos de programación, la tecla flecha hacia arriba recorre a través de los comandos anteriores. Trate de teclear la flecha hacia arriba en el teclado hasta que se llegue a este comando (z * 2 + 100), a continuación, cambiae de 100 a 1000 y pulse Enter. Si la flecha hacia arriba no funciona para ti, sólo tienes que escribir el comando corregido.
+  Output: En muchos entornos de programación, la tecla flecha hacia arriba recorre a través de los comandos anteriores. 
+  Trate de teclear la flecha hacia arriba en el teclado hasta que se llegue a este comando (z * 2 + 100), a 
+  continuación, cambiae de 100 a 1000 y pulse Enter. Si la flecha hacia arriba no funciona para ti, sólo tienes que 
+  escribir el comando corregido.
   CorrectAnswer: z * 2 + 1000
   AnswerTests: omnitest(correctExpr='z * 2 + 1000')
-  Hint: Si su entorno no admite la función de flecha hacia arriba, y luego sólo tienes que escribir el comando corregido para seguir adelante.
+  Hint: Si su entorno no admite la función de flecha hacia arriba, y luego sólo tienes que escribir el comando 
+  corregido para seguir adelante.
 
 - Class: text
-  Output: Por último, vamos a suponer que desea ver el contenido de una variable que ha creado anteriormente, pero parece que no puede recordar si usted la nombró como my_div o myDiv. Podrías probar ambos y ver lo que funciona, o ...
+  Output: Por último, vamos a suponer que desea ver el contenido de una variable que ha creado anteriormente, 
+  pero parece que no puede recordar si usted la nombró como my_div o myDiv. Podrías probar ambos y ver lo que 
+  funciona, o ...
 
 - Class: cmd_question
-  Output: Puede escribir las dos primeras letras del nombre de la variable, y luego presionar la tecla Tab (posiblemente más de una vez). La mayoría de los entornos de programación proporcionará una lista de las variables que ha creado que comiencen con "mi". Esto se llama auto-completado y puede ser muy útil cuando se tienen muchas variables en el espacio de trabajo. Dese una oportunidad. (Si el autocompletado no funciona para ti, sólo tienes que escribir my_div y pulse Intro.)
+  Output: Puede escribir las dos primeras letras del nombre de la variable, y luego presionar la tecla Tab 
+  (posiblemente más de una vez). La mayoría de los entornos de programación proporcionará una lista de las 
+  variables que ha creado que comiencen con "mi". Esto se llama auto-completado y puede ser muy útil cuando 
+  se tienen muchas variables en el espacio de trabajo. Dese una oportunidad. (Si el autocompletado no funciona 
+  para ti, sólo tienes que escribir my_div y pulse Intro.)
   CorrectAnswer: my_div
   AnswerTests: omnitest(correctExpr='my_div')
-  Hint: Si su entorno de programación no soporta auto-realización, sólo tienes que escribir my_div y pulse Enter para continuar.
+  Hint: Si su entorno de programación no soporta auto-realización, sólo tienes que escribir my_div y pulse Intro 
+  para continuar.
 
 - Class: mult_question
   Output: ¿Te gustaría informar a alguien acerca de su finalización con éxito de esta lección?
