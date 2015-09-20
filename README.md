@@ -51,9 +51,9 @@ Hasta ahora, este proyecto tiene una avance del **100%** en la traducción. Est�
 Reconfigurar los directoris con los títulos en español.
 
 Incluir las lecciones del curso [R Programming](https://github.com/swirldev/swirl_courses/tree/master/R_Programming) de swirl para hacer nuestro curso en español un poco más completo:
-- Workspace_and_Files
-- Functions
-- Base_Graphics
+- Workspace_and_Files.
+- Functions.
+- Base_Graphics.
 
 Por otra parte, intentaré incluir al final de cada lección, aparte del envío del correo, la opción de calificar mediante una conección a alguna aula virtual basada en moodle.
 
