@@ -48,8 +48,9 @@ Hasta ahora, este proyecto tiene una avance del **100%** en la traducción. Est�
 
 
 **TODOs**
+Reconfigurar los directoris con los títulos en español.
 
-Ahora voy a incluir las lecciones del curso [R Programming](https://github.com/swirldev/swirl_courses/tree/master/R_Programming) de swirl para hacer nuestro curso en español un poco más completo:
+Incluir las lecciones del curso [R Programming](https://github.com/swirldev/swirl_courses/tree/master/R_Programming) de swirl para hacer nuestro curso en español un poco más completo:
 - Workspace_and_Files
 - Functions
 - Base_Graphics
