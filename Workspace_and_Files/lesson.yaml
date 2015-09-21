@@ -1,0 +1,213 @@
+- Class: meta
+  Course: R Programming
+  Lesson: Espacio de trabajo y Archivo
+  Author: David Kane
+  Type: Standard
+  Organization: JHU Biostat
+  Version: 2.2.0
+
+- Class: text
+  Output: "En esta lección, usted aprenderá cómo examinar su espacio de trabajo local en R y comenzar a explorar la relación entre el espacio de trabajo y el sistema de archivos de la máquina."
+
+- Class: text
+  Output: "Debido a que los diferentes sistemas operativos tienen diferentes convenciones con respecto a cosas como rutas de los archivos, las salidas de estos comandos pueden variar a través de diferentes máquinas."
+
+- Class: text
+  Output: Sin embargo, es importante señalar que R proporciona una API común (un conjunto común de comandos) para interactuar con archivos, de esa manera su código trabajará  bien en diferentes tipos de computadoras y sistemas operativos.
+
+- Class: text
+  Output: Vayamos directo a estudiar como trabajan estas funciones especiales!
+
+- Class: cmd_question
+  Output: Determine qué directorio está utilizando su sesión actual de R como directorio de trabajo, utilizando getwd().
+  CorrectAnswer: getwd()
+  AnswerTests: omnitest(correctExpr='getwd()')
+  Hint: Escriba getwd() para determinar el directorio de trabajo actual.
+
+- Class: cmd_question
+  Output: Liste todos los objetos en el espacio de trabajo local usando ls().
+  CorrectAnswer: ls()
+  AnswerTests: omnitest(correctExpr='ls()')
+  Hint: Escriba ls() para ver todos los objetos en el espacio de trabajo local.
+
+- Class: text
+  Output: Algunos comandos de R son los mismos que sus equivalentes en Linux o en un Mac. De hecho, ttnto Linux como Mac se basan en un sistema operativo llamado Unix. Siempre será una buena idea aprender un poco más sobre Unix!
+
+- Class: cmd_question
+  Output: Asignar 9 a x con x <- 9.
+  CorrectAnswer: x <- 9
+  AnswerTests: omnitest(correctExpr='x <- 9')
+  Hint: Escriba x <- 9 para asignar 9 a x.
+
+- Class: cmd_question
+  Output: Ahora echar un vistazo a los objetos que se encuentran en su área de trabajo usando ls().
+  CorrectAnswer: ls()
+  AnswerTests: omnitest(correctExpr='ls()')
+  Hint: Escriba ls() para ver todos los objetos en el espacio de trabajo.
+
+- Class: cmd_question
+  Output: Liste todos los archivos en el directorio de trabajo utilizando list.files() o  dir().
+  CorrectAnswer: list.files()
+  AnswerTests: any_of_exprs('list.files()', 'dir()')
+  Hint: Escriba list.files() para ver todos los archivos en su directorio de trabajo.
+
+- Class: cmd_question
+  Output: A medida que avanzamos a través de esta lección, puedes consultar la página de ayuda para cada nueva función. Echa un vistazo a la página de ayuda para list.files con el comando ?list.files.
+  CorrectAnswer: ?list.files
+  AnswerTests: any_of_exprs('?list.files', '?dir', 'help("list.files")', 'help("dir")')
+  Hint: Escriba ?list.files help("list.files") o help("dir") para ver la página de ayuda.
+
+- Class: text
+  Output: Una de las partes más útiles de cualquier archivo de ayuda en R es la sección "See Also". Lea esa sección en la ayuda de list.files. Algunas de estas funciones pueden ser utilizadas posteriores en esta lección.
+
+- Class: text
+  Output: El uso de la función args() con el nombre de función cualquiera también es una manera práctica de ver qué argumentos puede tomar una función. 
+
+- Class: cmd_question
+  Output: Utilice la función args() para determinar los argumentos  la función list.files().
+  CorrectAnswer: args(list.files)
+  AnswerTests: omnitest(correctExpr='args(list.files)')
+  Hint: Escriba args(list.files) para ver los argumentos que puede tomar list.files().
+
+
+- Class: cmd_question
+  Output: Asigne el valor del directorio de trabajo actual a una variable llamada "old.dir".
+  CorrectAnswer: old.dir <- getwd()
+  AnswerTests: omnitest(correctExpr='old.dir <- getwd()')
+  Hint: Escriba old.dir <- getwd() para asignar el dirección del directorio trabajo actual a una variable llamada "old.dir".
+
+- Class: text
+  Output: Usaremos old.dir al final de esta lección para movernos de vuelta al lugar en el que empezamos. Una gran cantidad de funciones de consulta como getwd() tienen la útil propiedad que devuelvan la respuesta a la pregunta, como resultado de la función.
+
+- Class: cmd_question
+  Output: Use dir.create() para crear un directorio llamado "testdir" en el directorio trabajo actual.
+  CorrectAnswer: dir.create("testdir")
+  AnswerTests: omnitest(correctExpr='dir.create("testdir")')
+  Hint: Escriba dir.create("testdir") para crear un directorio llamado "testdir" en el directorio trabajo actual.
+
+- Class: text
+  Output: Vamos a hacer todo nuestro trabajo en este nuevo directorio y luego borrarlo después que hayamos terminado. Este es el análogo en R al "Take only pictures, leave only footprints" ("Tome sólo fotos, deje sólo huellas").
+
+- Class: cmd_question
+  Output: Establezca su directorio de trabajo a "testdir" con el comando setwd().
+  CorrectAnswer: setwd("testdir")
+  AnswerTests: any_of_exprs('setwd("testdir")', 'setwd("testdir/")')
+  Hint: Utilice setwd("testdir") para establecer el directorio de trabajo a "testdir".
+
+- Class: text
+  Output: "En general, usted querra que su directorio de trabajo sea un lugar específico, quizás creado para un proyecto en el que está trabajando. De hecho, la organización de su trabajo en paquetes de R utilizando RStudio es una excelente opción. Echa un vistazo a RStudio en http://www.rstudio.com/"
+
+- Class: cmd_question
+  Output: Crear un archivo en el directorio de trabajo denominado "mytest.R" utilizando la función file.create().
+  CorrectAnswer: file.create("mytest.R")
+  AnswerTests: omnitest(correctExpr='file.create("mytest.R")')
+  Hint: file.create("mytest.R") hará el trabajo!
+
+- Class: cmd_question
+  Output: "Este debería ser el único archivo en nuestro recién creado directorio. Vamos a comprobar esto haciendo una lista de todos los archivos en el directorio actual."
+  CorrectAnswer: list.files()
+  AnswerTests: any_of_exprs('list.files()', 'list.files')
+  Hint: list.files() muestra que el directorio sólo contiene mytest.R.
+
+- Class: cmd_question
+  Output: Verifique que "mytest.R" existe en el directorio de trabajo utilizando la función file.exists().
+  CorrectAnswer: file.exists("mytest.R")
+  AnswerTests: omnitest(correctExpr='file.exists("mytest.R")')
+  Hint: Use file.exists(("mytest.R") para comprobar que existe el archivo.
+
+- Class: text
+  Output: Este tipo de funciones son excesivas para el trabajo interactivo. Pero si está ejecutando un programa que recorre una serie de archivos y hace algún procesamiento en cada uno, usted querrá comprobar que cada uno existe antes intentar procesarlo.
+
+- Class: cmd_question
+  Output: Accese a la información sobre el archivo "mytest.R" utilizando file.info().
+  CorrectAnswer: file.info("mytest.R")
+  AnswerTests: omnitest(correctExpr='file.info("mytest.R")')
+  Hint: file.info("mytest.R") hará el truco!
+
+- Class: text
+  Output: Puede utilizar el operador $, por ejemplo, file.info("mytest.R")$mode para obtener objetos específicos del resultado.
+
+- Class: cmd_question
+  Output: Cambie el nombre del archivo "mytest.R" a "mytest2.R" mediante el uso de file.rename().
+  CorrectAnswer: file.rename("mytest.R", "mytest2.R")
+  AnswerTests: any_of_exprs('file.rename("mytest.R", "mytest2.R")', 'file.rename(from = "mytest.R", to = "mytest2.R")')
+  Hint: file.rename("mytest.R", "mytest2.R") es la respuesta. Busque en Google usando las palabras clave de la pregunta, junto con la letra R, a menudo le dará buenas sugerencias.
+
+- Class: text
+  Output: "Su sistema operativo proporcionará herramientas más simples para este tipo de tareas, pero tener la capacidad de manipular archivos mediante programación es útil. Usted puede ahora tratar de borrar el mytest.R usando file.remove('mytest.R'), pero eso no va a funcionar dado que mytest.R ya no existe. Recuerde que usted ya le había cambiado el nombre."
+  
+- Class: cmd_question
+  Output: Haga una copia de "mytest2.R" llamado "mytest3.R" utilizando file.copy().
+  CorrectAnswer: file.copy("mytest2.R", "mytest3.R")
+  AnswerTests: any_of_exprs('file.copy("mytest2.R", "mytest3.R")', 'file.copy(from = "mytest2.R", to = "mytest3.R")')
+  Hint: file.copy("mytest2.R", "mytest3.R") works.
+
+- Class: text
+  Output: Ahora tiene dos archivos en el directorio actual. Eso pudiera no parecer muy interesante. Pero si estuviera trabajando con docenas, o millones de archivos individuales? En ese caso, ser capaz de actuar programáticamente sobre muchos archivos sería absolutamente necesario. No olvide que usted puede, temporalmente, dejar la lección escribiendo play() y luego volver escribiendo nxt().
+
+- Class: cmd_question
+  Output: Proporcione la ruta relativa al archivo "mytest3.R" utilizando file.path().
+  CorrectAnswer: file.path("mytest3.R")
+  AnswerTests: omnitest(correctExpr='file.path("mytest3.R")')
+  Hint: file.path("mytest3.R") funcionará.
+
+- Class: cmd_question
+  Output: "Puede utilizar file.path para construir rutas de archivos y directorios que son independientes del sistema operativo donde su código R se está ejecutando. Pase 'folder1' y 'folder2' como argumentos para file.path para hacer una ruta relativa e  independiente de la plataforma."
+  CorrectAnswer: file.path("folder1", "folder2")
+  AnswerTests: omnitest(correctExpr='file.path("folder1", "folder2")')
+  Hint: file.path("folder1", "folder2") funcionará.
+
+- Class: cmd_question
+  Output: "Echa un vistazo a la documentación de dir.create introduciendo ?dir.create. Observe el argumento 'recursive'. Con el fin de crear directorios anidados, 'recursive' debe establecerse en TRUE."
+  CorrectAnswer: ?dir.create
+  AnswerTests: omnitest(correctExpr='?dir.create')
+  Hint: ?dir.create le mostrará la documentación.
+
+- Class: cmd_question
+  Output: Cree un directorio en el directorio actual de trabajo llamado "testdir2" y un subdirectorio dentro de el, llamó "testdir3", todo en un solo comando mediante el uso de dir.create() y file.path().
+  CorrectAnswer: dir.create(file.path("testdir2", "testdir3"), recursive = TRUE)
+  AnswerTests: omnitest(correctExpr='dir.create(file.path("testdir2", "testdir3"), recursive = TRUE)')
+  Hint: "dir.create(file.path('testdir2', 'testdir3'), recursive = TRUE) hará el truco. Si hubera olvidó el argumento recursivo, el comando podría aparentar que funciona, pero no crearía el directorio anidado."
+
+- Class: text
+  Output:  Para eliminar un directorio se debe utilizar el argumento recursive = TRUE con la función unlink(). Si usted no utiliza recursive = TRUE, R se preocupa porque estés consciente de que estás por borrar un directorio y todo contenido. R razona esto, si usted no especifica que recursive es igual a TRUE, es porque usted puede no saber si hay algo en el directorio que está tratando borrar. Por tanto R intentará evitar que usted cometeta un error."
+
+- Class: cmd_question
+  Output: Elimine el directorio "testdir2" que ha creado mediante el uso de la función unlink().
+  CorrectAnswer: unlink("testdir2", recursive = TRUE)
+  AnswerTests: omnitest(correctExpr='unlink("testdir2", recursive = TRUE)')
+  Hint: unlink("testdir2", recursive = TRUE) funciona. 
+
+- Class: text
+  Output: ¿Por qué este comando se llama "unlink" en lugar de algo más sensato como "dir.delete" o "dir.remove"? Principalmente, por la historia. unlink es el comando de Unix tradicional para eliminar directorios.
+
+- Class: cmd_question
+  Output: Vuelve a tu directorio de trabajo original usando setwd() (Recordemos que en el inicio de estas preguntas creamos la variable old.dir, con la ruta completa para el directorio de trabajo original).
+  CorrectAnswer: setwd(old.dir)
+  AnswerTests: omnitest(correctExpr='setwd(old.dir)')
+  Hint: Utilice setwd(old.dir).
+
+- Class: text
+  Output: "A menudo es útil guardar la configuración que tenía antes comenzar un análisis y luego volver a estos valores al final. Este truco es a menudo utilizado dentro de las funciones; por ejemplo, con la función par() usted guarda las configuraciones, despues hace el trabajo y luego configurar de nuevo a los valores originales al final. Esto no es lo mismo que lo que hemos hecho aquí, pero se parece bastante a lo que acabamos mencionar."
+
+- Class: cmd_question
+  Output: "Elimine el directorio 'testdir' que acaba de dejar (y todo en él)."
+  CorrectAnswer: unlink("testdir", recursive = TRUE)
+  AnswerTests: omnitest(correctExpr='unlink("testdir", recursive = TRUE)')
+  Hint: Utilice unlink("testdir", recursive = TRUE).
+
+- Class: text
+  Output: "Take nothing but results. Leave nothing but assumptions. 
+    That sounds like 'Take nothing but pictures. Leave nothing but 
+    footprints.' But it makes no sense! Surely our readers can come up 
+    with a better motto . . ."
+
+- Class: text
+  Output: "En esta lección, ha aprendido a examinar su espacio de trabajo en R y a trabajar con el sistema de archivos de su máquina desde dentro R. Gracias por jugar!"
+
+- Class: mult_question
+  Output: ¿Te gustaría informar a alguien acerca de su finalización con éxito de esta lección?
+  CorrectAnswer: NULL
+  AnswerChoices: Yes; No
+  AnswerTests: notify()
+  Hint: NULL

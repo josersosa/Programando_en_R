@@ -45,13 +45,13 @@ uninstall_course("Programando_en_R")
 **Avance del proyecto**
 
 Hasta ahora, este proyecto tiene una avance del **100%** en la traducción. Están traducidas todas las lecciones de un total de 12 del curso original [R_Programming_Alt](https://github.com/swirldev/swirl_courses/tree/master/R_Programming_Alt)..
-
+Ya se anincluido las lecciones extras:
+- Workspace_and_Files.
 
 **TODOs**
 Reconfigurar los directoris con los títulos en español.
 
 Incluir las lecciones del curso [R Programming](https://github.com/swirldev/swirl_courses/tree/master/R_Programming) de swirl para hacer nuestro curso en español un poco más completo:
-- Workspace_and_Files.
 - Functions.
 - Base_Graphics.
 
