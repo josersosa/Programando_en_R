@@ -33,7 +33,7 @@ Y lo iniciamos con:
 swirl()
 ```
 
-Al comienzo nos solicita un nombre para identificarnos y almacenar los avances que agamos en el caso que deseemos pausar el curso. Las primeras informaciones estan en ingles porque provienen del paquete swirl. Luego seleccionamos el curso _Programando en R_ y a partir de ahí todo lo esencial estará traducido.
+Al comienzo nos solicita un nombre para identificarnos y almacenar los avances que hagamos en el caso que deseemos pausar el curso. Las primeras informaciones estan en ingles porque provienen del paquete swirl. Luego seleccionamos el curso _Programando en R_ y a partir de ahí todo lo esencial estará traducido.
 
 Por último, cuando hayamos terminado, podemos desinstalar el curso con:
 
