@@ -1,36 +1,41 @@
-# Let me show you an example of a function I'm going to make up called
-# increment(). Most of the time I want to use this function to increase the
-# value of a number by one. This function will take two arguments: "number" and
-# "by" where "number" is the digit I want to increment and "by" is the amount I
-# want to increment "number" by. I've written the function below. 
+# Déjame mostrarte un ejemplo de una función que voy a comenzar llamado
+# increment(). La mayoría de las veces vamos a querer utilizar esta 
+# función para aumentar el valor del número por uno. Esta función 
+# llevará a dos argumentos: "number" y "by" donde "number" es el dígito 
+# que queremos incrementar y "by" es la cantidad por la que queremos 
+# incrementar a "number". Para esto hemos escrito la siguiente función.
 #
 # increment <- function(number, by = 1){
 #     number + by
 # }
 #
-# If you take a look in between the parentheses you can see that I've set
-# "by" equal to 1. This means that the "by" argument will have the default
-# value of 1.
+# Si usted echa un vistazo entre los paréntesis se puede ver que hemos 
+# establecido "by" igual a 1. Esto significa que el argumento "by" 
+# tendrá un valor predeterminado de 1.
 #
-# I can now use the increment function without providing a value for "by": 
-# increment(5) will evaluate to 6. 
+# Ahora podemos usar la función increment, sin proporcionar un valor 
+# para "by": increment(5) se evaluará en 6.
 #
-# However if I want to provide a value for the "by" argument I still can! The
-# expression: increment(5, 2) will evaluate to 7. 
-# 
-# You're going to write a function called "remainder." remainder() will take
-# two arguments: "num" and "divisor" where "num" is divided by "divisor" and
-# the remainder is returned. Imagine that you usually want to know the remainder
-# when you divide by 2, so set the default value of "divisor" to 2. Please be
-# sure that "num" is the first argument and "divisor" is the second argument.
+# Sin embargo si queremos ofrecer un valor para el argumento "by", 
+# todavía se puede! la expresión: increment(5, 2) se evaluarán en 7.
 #
-# Hint #1: You can use the modulus operator %% to find the remainder.
-#   Ex: 7 %% 4 evaluates to 3. 
+# Usted debe a escribir una función llamada "remainder". remainder() 
+# se tomará dos argumentos: "num" y "divisor", donde "num" será dividido 
+# por "divisor" y se devuelve el reciduo de la divición entera. Imagina 
+# que por lo general quiere saber el reciduo cuando se divide por 2, por 
+# lo que establece el valor por defecto de "divisor" a 2. Por favor, 
+# asegúrese de que "num" es el primer argumento y "divisor" es el segundo 
+# argumento.
 #
-# Remember to set appropriate default values! Be sure to save this 
-# script and type submit() in the console after you write the function.
+# Sugerencia # 1: Puede utilizar el operador módulo %% para encontrar el 
+# reciduo de la división. 
+# Ej: 7 %% 4 se evalúa en 3.
+#
+# Recuerde que debe establecer los valores predeterminados apropiados! 
+# Asegúrese de guardar este script y escriba de submit() en la consola 
+# después de escribir la función.
 
 remainder <- function(num, divisor) {
-  # Write your code here!
-  # Remember: the last expression evaluated will be returned! 
+  # Escriba su código aquí!
+  # Recuerde: la última expresión evaluada será el valor devuelto! 
 }

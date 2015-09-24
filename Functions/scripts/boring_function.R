@@ -1,23 +1,25 @@
-# You're about to write your first function! Just like you would assign a value 
-# to a variable with the assignment operator, you assign functions in the following
-# way:
+# Estás a punto de escribir su primera función! Simplemente asigna un valor
+# valor a una variable con el operador de asignación, su función de  
+# asignación puede ser de la siguiente forma:
 #
-# function_name <- function(arg1, arg2){
-#	# Manipulate arguments in some way
-#	# Return a value
+# function_name <- function(arg1, arg2) {
+# 	# Manipular argumentos de alguna manera
+# 	# Devuelve un valor
 # }
 #
-# The "variable name" you assign will become the name of your function. arg1 and
-# arg2 represent the arguments of your function. You can manipulate the arguments
-# you specify within the function. After sourcing the function, you can use the 
-# function by typing:
-# 
-# function_name(value1, value2)
+# El "nombre de variable" que asigne asumirá el valor en el nombre de su 
+# función. arg1 y arg2 representan los argumentos de la función. 
+# Puede manipular los argumentos que especifique dentro de la función. 
+# Después de codificar la función, la puede utilizar el escribiendo:
 #
-# Below we will create a function called boring_function. This function takes
-# the argument `x` as input, and returns the value of x without modifying it.
-# Delete the pound sign in front of the x to make the function work! Be sure to 
-# save this script and type submit() in the console after you make your changes.
+# function_name(valor1, valor2)
+#
+# A continuación vamos a crear una función llamada boring_function. 
+# Esta función toma el argumento `x` como entrada y devuelve el valor 
+# de x sin modificarlo. Elimine el símbolo de numeral frente a la x 
+# para hacer funcionar la función! Asegúrate de guardar esta secuencia 
+# de comandos y escriba submit() en la consola después de realizar y 
+# salvar los cambios:
 
 boring_function <- function(x) {
   #x

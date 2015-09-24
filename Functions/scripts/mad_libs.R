@@ -1,37 +1,40 @@
-# Let's explore how to "unpack" arguments from an ellipses when you use the
-# ellipses as an argument in a function. Below I have an example function that
-# is supposed to add two explicitly named arguments called alpha and beta.
-# 
+# Vamos a explorar cómo "desempaquetar" los argumentos de una elipsis 
+# cuando  se utiliza como un argumento en una función. A continuación 
+# tengo una función de ejemplo donde se supone que se sumarán los dos 
+# argumentos con nombre explícitamente llamados alfa y beta.
+#
 # add_alpha_and_beta <- function(...){
-#   # First we must capture the ellipsis inside of a list
-#   # and then assign the list to a variable. Let's name this
-#   # variable `args`.
+#	# En primer lugar tenemos que capturar los puntos suspensivos en el 
+#	# interior de una lista y luego asignar la lista a una variable. 
+#	# Nombraremos a esta variable `args`.
 #
 #   args <- list(...)
 #
-#   # We're now going to assume that there are two named arguments within args
-#   # with the names `alpha` and `beta.` We can extract named arguments from
-#   # the args list by used the name of the argument and double brackets. The
-#   # `args` variable is just a regular list after all!
-#   
+#	# Vamos ahora va a suponer que hay dos argumentos con nombre dentro 
+#	# de args con los llamados `alpha` y` beta.` Podemos extraer los 
+#	# argumentos con nombre de la lista args utilizado el nombre del 
+#	# argumento y los dobles corchetes. Las variables `args` son 
+#	# simplemente una lista normal después de todo!
+#
 #   alpha <- args[["alpha"]]
 #   beta  <- args[["beta"]]
 #
-#   # Then we return the sum of alpha and beta.
+#	# Entonces, retornamos la suma de alfa y beta.
 #
-#   alpha + beta 
+#	alpha + beta 
 # }
 #
-# Have you ever played Mad Libs before? The function below will construct a
-# sentence from parts of speech that you provide as arguments. We'll write most
-# of the function, but you'll need to unpack the appropriate arguments from the
-# ellipses.
+# ¿Alguna vez has usado Mad Libs antes? La función de abajo construye una
+# frase a partir partes del discurso que usted debe proporcionar como  
+# argumentos. Escribí la mayor parte de la función, pero tendrás que 
+# desempaquetar los argumentos adecuados de la elipsis .
 
 mad_libs <- function(...){
-  # Do your argument unpacking here!
-  
-  # Don't modify any code below this comment.
-  # Notice the variables you'll need to create in order for the code below to
-  # be functional!
-  paste("News from", place, "today where", adjective, "students took to the streets in protest of the new", noun, "being installed on campus.")
+  # Haga el desempaquetado de su argumento aquí!
+  
+  # No modifique ningún código debajo de este comentario.
+  # Tenga en cuenta las variables que se necesitan en orden, para hacer que el 
+  # código de abajo sea funcional!
+  paste("Noticias desde", lugar, "en la actualidad, donde los estudiantes", adjetivo, "salieron a las calles en protesta por el nuevo", sustantivo, "que se está instalando en el campus.")
 }
+

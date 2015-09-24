@@ -1,23 +1,25 @@
-# You're free to implement the function my_mean however you want, as long as it
-# returns the average of all of the numbers in `my_vector`.
+# Usted es libre de implementar la función my_mean de la forma que desee, 
+# siempre y cuando devuelva el promedio de todos los números en 
+# contenidos en `my_vector`.
 #
-# Hint #1: sum() returns the sum of a vector.
-# 	Ex: sum(c(1, 2, 3)) evaluates to 6
+# Sugerencia #1: sum() devuelve la suma de un vector.
+# Ejemplo: suma(c(1, 2, 3)) evalúa en 6
 #
-# Hint #2: length() returns the size of a vector.
-# 	Ex: length(c(1, 2, 3)) evaluates to 3
+# Sugerencia #2: length() devuelve el tamaño de un vector.
+# Ejemplo: length(c(1, 2, 3)) se evalúa como 3
 #
-# Hint #3: The mean of all the numbers in a vector is equal to the sum of all of
-#		   the numbers in the vector divided by the size of the vector.
+# Sugerencia #3: La media de todos los números en un vector es igual a 
+# la suma de todos los números en el vector dividido por el tamaño del 
+# vector.
 #
-# Note for those of you feeling super clever: Please do not use the mean()
-# function while writing this function. We're trying to teach you something 
-# here!
+# Nota para que usted se sienta súper inteligente: Por favor, no use 
+# la función mean() al escribir esta función. Estamos tratando de 
+# enseñarte algo ¡Aquí!
 #
-# Be sure to save this script and type submit() in the console after you make 
-# your changes.
+# Asegúrese de guardar este script y escriba submit() en la consola 
+# después de guardar sus cambios.
 
 my_mean <- function(my_vector) {
-  # Write your code here!
-  # Remember: the last expression evaluated will be returned! 
+  # Escriba su código aquí!
+  # Recuerde: la última expresión evaluada será el valor devuelto!
 }

@@ -1,5 +1,6 @@
-# You can pass functions as arguments to other functions just like you can pass
-# data to functions. Let's say you define the following functions:
+# Se puede pasar funciones como argumentos a otras funciones al igual 
+# que usted puede pasar datos a funciones. Digamos que usted define 
+# las siguientes funciones:
 #
 # add_two_numbers <- function(num1, num2){
 #    num1 + num2
@@ -13,23 +14,23 @@
 #    func(2, 4)
 # }
 #
-# As you can see we use the argument name "func" like a function inside of 
-# "some_function()." By passing functions as arguments 
-# some_function(add_two_numbers) will evaluate to 6, while
-# some_function(multiply_two_numbers) will evaluate to 8.
-# 
-# Finish the function definition below so that if a function is passed into the
-# "func" argument and some data (like a vector) is passed into the dat argument
-# the evaluate() function will return the result of dat being passed as an
-# argument to func.
+# Como se puede ver se utiliza el nombre de argumento "func" como una 
+# función dentro de "some_function()." Al pasar funciones como argumentos
+# some_function(add_two_numbers) se evaluará en 6, mientras que
+# some_function(multiply_two_numbers) se evaluará en 8.
 #
-# Hints: This exercise is a little tricky so I'll provide a few example of how
-# evaluate() should act:
-#    1. evaluate(sum, c(2, 4, 6)) should evaluate to 12
-#    2. evaluate(median, c(7, 40, 9)) should evaluate to 9
-#    3. evaluate(floor, 11.1) should evaluate to 11
+# Finalize la definición de la función de abajo de modo que si una función 
+# se pasa en el argumento "func" y algunos datos (como un vector) se 
+# pasan al argumento dat, la función evaluate() devolverá el resultado 
+# de func al que se le pasa argumento dat .
+#
+# Sugerencias: Este ejercicio es un poco difícil así que le voy a dar 
+# algunos ejemplos de cómo evaluate() debe actuar:
+# 1. evaluate(sum, c(2, 4, 6)) se debe evaluar en 12
+# 2. evaluate(median, c(7, 40, 9)) se debe evaluar en 9
+# 3. evaluate(floor, 11.1) se debe evaluar en 11
 
 evaluate <- function(func, dat){
-  # Write your code here!
-  # Remember: the last expression evaluated will be returned! 
+  # Escriba su código aquí!
+  # Recuerde: la última expresión evaluada será el valor devuelto por la función!
 }
