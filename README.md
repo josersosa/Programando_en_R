@@ -12,7 +12,7 @@ El objetivo de este proyecto es disponer un curso interactivo sobre los fundamen
 
 **Prerrequisitos**
 
-Para acceder a este curso debes tener instalado el R, y preferiblemente Rstudio, así como el paquete [swirl](http://swirlstats.com/). Puedes instalarlo desde la consola de R así:
+Para acceder a este curso debes tener instalado el [R](https://cran.rstudio.com/), y preferiblemente [Rstudio](https://www.rstudio.com/products/rstudio/download/), así como el paquete [swirl](http://swirlstats.com/). Puedes instalarlo desde la consola de R así:
 
 ```{r}
 install.packages('swirl')
@@ -44,7 +44,7 @@ uninstall_course("Programando_en_R")
 
 **Avance del proyecto**
 
-Hasta ahora, este proyecto tiene una avance del **100%** en la traducción. Están traducidas todas las lecciones de un total de 12 del curso original [R_Programming_Alt](https://github.com/swirldev/swirl_courses/tree/master/R_Programming_Alt)..
+Hasta ahora, este proyecto tiene una avance del **100%** en la traducción. Están traducidas todas las lecciones de un total de 12 del curso original [R_Programming_Alt](https://github.com/swirldev/swirl_courses/tree/master/R_Programming_Alt).
 Ya se han incluido la lecciones extras:
 - Workspace_and_Files.
 - Functions.
