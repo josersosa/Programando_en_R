@@ -10,7 +10,7 @@
   Output: Una de las mayores fortalezas de R, en relación con otros lenguajes de programación, es la facilidad con la que podemos crear gráficos con calidad de publicación. En esta lección, usted aprenderá acerca de los gráficos básicos de R. 
 
 - Class: text
-  Output: Nosotros cubriremos los temas más avanzados de gráficos en R en esta lección. Estos incluyen lattice, ggplot2 y ggvis.
+  Output: Nosotros no cubriremos los temas más avanzados de gráficos en R en esta lección. Estos incluyen lattice, ggplot2 y ggvis.
 
 - Class: text
   Output: Hay una escuela de pensamiento que opina que el enfoque para abordar este tema debería ser al revés, es decir, que deberíamos enseñar ggplot2 primero. Vea http://varianceexplained.org/r/teach_ggplot2_to_beginners/ para tener una mejor idea de este punto de vista.
@@ -115,7 +115,7 @@
   Output: Para cada pregunta, nosotros sólo queremos un argumento adicional a la vez. Por supuesto, usted puede pasar en más de un argumento al hacer un proyecto real.
 
 - Class: cmd_question
-  Output: Grafique cars con un título principal de "Mi Plot". Tenga en cuenta que el argumento para el título principal es "main" no "title".
+  Output: Grafique cars con un título principal de "My Plot". Tenga en cuenta que el argumento para el título principal es "main" no "title".
   CorrectAnswer: plot(cars, main = "My Plot")
   AnswerTests: omnitest(correctExpr='plot(cars, main = "My Plot")')
   Hint: Escriba plot(cars, main = "My Plot") para crear la gráfica.
@@ -136,25 +136,32 @@
   Hint: Escriba plot(cars, col = 2) para crear el gráfico.
 
 - Class: cmd_question
-  Output: cars Terreno limitando al mismo tiempo el eje x a través de 15. 10 (Use xlim = c(10, 15) para lograr este efecto).
+  Output: Grafique cars limitando al mismo tiempo el eje x entre 10 y 15 (use xlim = c(10, 15) para lograr este efecto).
   CorrectAnswer: plot(cars, xlim = c(10, 15))
   AnswerTests: omnitest(correctExpr='plot(cars, xlim = c(10, 15))')
   Hint: Escriba plot(cars, xlim = c(10, 15)) para crear el gráfico.
 
 - Class: text
-  Output: YTambién puede cambiar la representacion de los símbolos en la gráfico. La página de ayuda para points (?points) proporciona algunos detalles.
+  Output: También puede cambiar la representacion de los símbolos en la gráfico o la forma de graficarlos. La página de ayuda para points (?points) proporciona algunos detalles.
 
 - Class: cmd_question
   Output: Grafique cars utilizando triángulos. (Use pch = 2 para lograr este efecto). 
   CorrectAnswer: plot(cars, pch = 2)
   AnswerTests: omnitest(correctExpr='plot(cars, pch = 2)')
-  Hint: Type plot(cars, pch = 2) to create the plot.
+  Hint: Escriba plot(cars, pch = 2) para crear el gráfico.
+
+- Class: cmd_question
+  Output: Grafique cars uniendo los puntos por lineas. (Use type = "l" para lograr este efecto). 
+  CorrectAnswer: plot(cars, type = "l")
+  AnswerTests: omnitest(correctExpr='plot(cars, type = "l")')
+  Hint: Escriba plot(cars, type = "l") para crear el gráfico.
+
 
 - Class: text
   Output: Argumentos como "col" y "pch" pueden no parecer muy intuitivos. Y es que no lo son! Es por esto que cada vez más personas usan los paquetes más modernos, como ggplot2, para la creación de sus gráficos en R.
 
 - Class: text
-  Output: Sin embargo, es útil tener una introducción a los gráficos de base porque muchos de los formatos en lattice y ggplot2 se modelan en ellos.
+  Output: Sin embargo, es útil tener una introducción a los gráficos de base porque muchos de los formatos en lattice y ggplot2 se modelaron a partir de ellos.
 
 - Class: text
   Output: Vamos ahora a ver algunas otras funciones en los gráficos de base que pueden ser útiles, comencemos con los diagramas de caja (boxplots).
@@ -172,13 +179,13 @@
   Output: Busque la página de ayuda para la función boxplot(). 
   CorrectAnswer: ?boxplot
   AnswerTests: any_of_exprs('?boxplot', 'help(boxplot)')
-  Hint: Type ?boxplot or help(boxplot) to view a help page with details about boxplot.
+  Hint: Escriba ?boxplot or help(boxplot) para ver la página de ayuda y los detalles a cerca de boxplot.
 
 - Class: text
   Output: En lugar de agregar columnas de datos directamente como argumentos de entrada, como lo hicimos con plot(), a menudo es útil pasar toda la trama de datos. Esto es lo que el argumento "data" en boxplot() permite.
 
 - Class: text
-  Output: boxplot(), al igual que muchas de las funciones de R, también tiene un argumento "formula", que es en general, una expresión con una tilde ("~") que indica la relación entre las variables de entrada. Esto le permite introducir algo como mpg ~ cyl para graficar la relación entre cyl (número de cilindros) en el eje x y mpg (millas por galón) en el eje y.
+  Output: boxplot(), al igual que muchas de las funciones de R, también tiene un argumento "formula", que es en general, una expresión con una tilde ("~") que indica la relación entre las variables de entrada. Esto le permite introducir algo como mpg ~ cyl para graficar la relación entre cyl (número de cilindros) en el eje x y mpg (millas por galón) en el eje y, es decir "millas por galón en función del número de cilindros". 
 
 - Class: cmd_question
   Output: Use boxplot()  con formula = mpg ~ cyl y data = mtcars para crear un gráfico de caja.
@@ -190,6 +197,9 @@
   Output: El gráfico muestra que mpg es mucho menor para los carros con más cilindros. Tenga en cuenta que podemos utilizar el mismo conjunto de argumentos que hemos explorado con plot() para añadir etiquetas de los ejes, títulos y demás.
 
 - Class: text
+  Output: Los boxplots muestran una suerte de distribución de cada variable, las lineas superior e inferior representan los máximos y mínimos (estadísticos). La caja interna denota el rango entre el primer cuartil y el tercer cuartil. La linea central representa la mediana (el punto que divide la muestra en dos partes iguales). Por último, es posible que se dibujen puntos aislados fuera de algunos bloxplots, estos puntos representas los datos atípicos. 
+
+- Class: text
   Output: Al mirar una sola variable, los histogramas son una herramienta útil. hist() es la función R asociada. Al igual que plot(), hist() se utiliza mejor con sólo pasar en un solo vector. 
 
 - Class: cmd_question
@@ -198,13 +208,56 @@
   AnswerTests: any_of_exprs('hist(mtcars$mpg)', 'hist(x = mtcars$mpg)')
   Hint: Escriba hist(mtcars$mpg) para crear el gráfco.
 
+- Class: text
+  Output: Otro tipo de gráficos muy importantes son los gráficos de barras. Estos reciben una matriz o arreglo como argumento. He preparado una matriz llamada marital para experimentar con este tipo de gráfico. Recuerde que puede usar las funciones play() y nxt() para pausar la lección y examinar este conjunto de datos.
+
+- Class: cmd_question
+  Output: Busque la página de ayuda para la función barplot(). 
+  CorrectAnswer: ?barplot
+  AnswerTests: any_of_exprs('?barplot', 'help(barplot)')
+  Hint: Escriba ?barplot or help(barplot) para ver la página de ayuda y los detalles a cerca de barplot.
+
+- Class: cmd_question
+  Output: Hagamos nuestro primer gráfico de barras con barplot() pasando como argumento solo el conjunto de datos marital, para ver el comportamiento de la función con sus valores por defecto. 
+  CorrectAnswer: barplot(marital)
+  AnswerTests: omnitest(correctExpr='barplot(marital)')
+  Hint: Escriba barplot(marital) para ver un gráfico de barras sobre la matriz de datos marital.
+
+- Class: cmd_question
+  Output: En casi cualquier tipo de gráfico en R podemos anexar una leyenda. En nuestro grafico de barras hace falta explicar el significado del color de las barras. Para esto incluya en el comando anterior el argumento legend = row.names(marital) 
+  CorrectAnswer: barplot(marital, legend = row.names(marital))
+  AnswerTests: omnitest(correctExpr='barplot(marital, legend = row.names(marital))')
+  Hint: Escriba barplot(marital, legend = row.names(marital)) para ver un gráfico de barras sobre la matriz de datos marital con una leyenda.
+
+- Class: text
+  Output: Por omisión barplot() muestra todos los valores de cada columna en una misma barra. Si quisieramos mostrar cada valor en una barra distinta podemos usar el argumento "beside"
+
+- Class: cmd_question
+  Output: Vamos a hacer esto pasando a la función barplot() el conjunto de datos marital y el argumento beside = TRUE 
+  CorrectAnswer: barplot(marital, beside = TRUE)
+  AnswerTests: omnitest(correctExpr='barplot(marital, beside = TRUE)')
+  Hint: Escriba barplot(marital, beside = TRUE) para ver un gráfico de barras sobre la matriz de datos marital con una leyenda.
+
+- Class: cmd_question
+  Output: Pero si lo que queremos es el gráfico de barras en función del estado civil, bastaría con pasar como argumento la matriz de datos traspuesta con la funcion t(). Escriba el mismo comando anterior pero trasponiendo el conjunto de datos con la funcion t(marital). 
+  CorrectAnswer: barplot(marital, beside = TRUE)
+  AnswerTests: omnitest(correctExpr='barplot(t(marital), beside = TRUE)')
+  Hint: Escriba barplot(t(marital), beside = TRUE) para ver un gráfico de barras sobre la matriz de datos marital con una leyenda.
+
+
 # Not sure what a good lesson length is for this. 
 # Might add some information on saving plots.
 # Other functions that I use include identify().
 
 - Class: text
-  Output: En esta lección, usted aprendió cómo trabajar con gráficos de base en R. El mejor lugar para ir desde aquí es estudiar el paquete ggplot2. Si desea explorar otros elementos de gráficos de base, entonces esta página web (http://www.ling.upenn.edu/~joseff/rstudy/week4.html) le ofrecer
-a un panorama útil.
+  Output: Todas las funciones estudiadas hasta ahora son conocidas como de "alto nivel", debido a que generan como resultado un gráfico completo. Le invitamos a estudiar otras funciones de alto nivel como pie(), contour(), image(), persp() y pairs().
+
+- Class: text
+  Output: También existen las funciones llamadas de "bajo nivel", que nos permiten agregar elementos a nuestros gráficos, como por ejemplo legend(), text(), points(), lines(), segments(), arrows(), abline(), entre otras.
+
+
+- Class: text
+  Output: En esta lección, usted aprendió cómo trabajar con gráficos de base en R. El mejor lugar para ir desde aquí es estudiar el paquete ggplot2. Si desea explorar otros elementos de gráficos de base, entonces consulte esta página web (http://www.ling.upenn.edu/~joseff/rstudy/week4.html) le ofrecerá un panorama útil.
 
 - Class: mult_question
   Output: ¿Te gustaría informar a alguien acerca de su finalización con éxito de esta lección?
