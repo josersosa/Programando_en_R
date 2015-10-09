@@ -106,8 +106,8 @@
 
 - Class: cmd_question
   Output: 'Cree un vector de caracteres que contenga las siguientes palabras: "Mi", "nombre", "es". Recuerde que debe incluir cada palabra en su propio conjunto de comillas dobles, de forma que R sepa que son cadenas de caracteres. Guarde el vector en una variable llamada my_char.'
-  CorrectAnswer: my_char <- c("My", "name", "is")
-  AnswerTests: omnitest(correctExpr='my_char <- c("My", "name", "is")')
+  CorrectAnswer: my_char <- c("Mi", "nombre", "es")
+  AnswerTests: omnitest(correctExpr='my_char <- c("Mi", "nombre", "es")')
   Hint: Escriba my_char <- c("Mi", "nombre", "es") para crear una nueva variable llamada my_char que contiene un vector de caracteres de longitud 3. Asegúrese de que las comas de separación de las palabras están fuera de las comillas dobles, o sino R pensara que las comas son parte de las palabras.
 
 - Class: cmd_question
@@ -117,7 +117,7 @@
   Hint: Escriba my_char para ver su contenido.
 
 - Class: text
-  Output: En este momento, my_char es un vector de caracteres de longitud 3. Digamos que queremos unir a los elementos de my_char juntos en una cadena de caracteres continua (Es decir, un vector de caracteres de longitud 1). Podemos hacer esto utilizando la función de pasta ().
+  Output: En este momento, my_char es un vector de caracteres de longitud 3. Digamos que queremos unir a los elementos de my_char juntos en una cadena de caracteres continua (Es decir, un vector de caracteres de longitud 1). Podemos hacer esto utilizando la función de paste().
 
 - Class: cmd_question
   Output: Escriba de paste(my_char, collapse = " ") ahora. Asegúrese de que hay un espacio entre las dobles comillas en el argumento `collapse`. Usted verá por qué en un segundo.
@@ -134,8 +134,7 @@
 - Class: cmd_question
   Output: 'Para añadir (o ''concatenar'') su nombre al final de my_char, utilice la función c() como esta: c(my_char, "your_name_here"). Coloque su nombre entre comillas dobles en "Your_Name_Here". Pruébalo ahora, almacenando el resultado en una nueva variable llamada my_name.'
   CorrectAnswer: my_name <- c(my_char, "Swirl")
-  AnswerTests: var_is_a("character", "my_name"); expr_uses_func("c"); expr_creates_var("my_name");
-    val_has_length(4)
+  AnswerTests: var_is_a("character", "my_name"); expr_uses_func("c"); expr_creates_var("my_name"); val_has_length(4)
   Hint: Añada su nombre en al final del vector my_char utilizando la función c(). Asegúrese de asignar el resultado a una nueva variable llamada my_name. Por ejemplo sí su nombre fuera "Remolino", debería escribir my_name <- c(my_char, "Remolino").
 
 - Class: cmd_question
