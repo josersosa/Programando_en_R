@@ -20,15 +20,15 @@
 # todavía se puede! la expresión: increment(5, 2) se evaluarán en 7.
 #
 # Usted debe a escribir una función llamada "remainder". remainder() 
-# se tomará dos argumentos: "num" y "divisor", donde "num" será dividido 
-# por "divisor" y se devuelve el reciduo de la divición entera. Imagina 
-# que por lo general quiere saber el reciduo cuando se divide por 2, por 
+# tomará dos argumentos: "num" y "divisor", donde "num" será dividido 
+# por "divisor" y se devuelve el residuo de la división entera. Imagina 
+# que por lo general quiere saber el residuo cuando se divide por 2, por 
 # lo que establece el valor por defecto de "divisor" a 2. Por favor, 
 # asegúrese de que "num" es el primer argumento y "divisor" es el segundo 
 # argumento.
 #
 # Sugerencia # 1: Puede utilizar el operador módulo %% para encontrar el 
-# reciduo de la división. 
+# residuo de la división. 
 # Ej: 7 %% 4 se evalúa en 3.
 #
 # Recuerde que debe establecer los valores predeterminados apropiados! 
