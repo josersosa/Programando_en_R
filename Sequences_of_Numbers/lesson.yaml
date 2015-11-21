@@ -107,7 +107,7 @@
   Hint: Escribe rep(0, times = 40) para hacer un vector que contiene 40 ceros.
 
 - Class: cmd_question
-  Output: Si en cambio queremos que nuestro vector contenga 10 repeticiones del vector (0, 1, 2), podemos hacer rep(c (0, 1, 2), times = 10). Adelante.
+  Output: Si en cambio queremos que nuestro vector contenga 10 repeticiones del vector (0, 1, 2), podemos hacer rep(c(0, 1, 2), times = 10). Adelante.
   CorrectAnswer: rep(c(0, 1, 2), times = 10)
   AnswerTests: omnitest(correctExpr='rep(c(0, 1, 2), times = 10)')
   Hint: Pruebe rep(c (0, 1, 2), times = 10) para diferentes variaciones sobre el mismo tema. Asegúrese de utilizar la función c() para decirle R que los números 0, 1 y 2 constituyen un vector.
