@@ -102,10 +102,5 @@
   AnswerTests: omnitest(correctExpr='Inf - Inf')
   Hint: Escriba Inf - Inf. ¿Puedes adivinar el resultado?
   
-- Class: mult_question
-  Output: ¿Te gustaría informar a alguien acerca de su finalización con éxito de esta lección?
-  CorrectAnswer: NULL
-  AnswerChoices: Yes; No
-  AnswerTests: notify()
-  Hint: NULL
+
 

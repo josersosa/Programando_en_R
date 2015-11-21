@@ -13,7 +13,7 @@
   Output: "Si usted ha trabajado en de cualquier otro componente de este curso, entonces seguramente a utilizado algunas funciones ya. Las funciones se caracterizan generalmente por estar compuestas por el nombre de la función seguido de paréntesis."
 
 - Class: cmd_question
-  Output: "Vamos a intentar usar algunas funciones básicas sólo por diversión. La función Sys.Dat() devuelve una cadena que representa la fecha de hoy. Escriba Sys.Date() abajo para ver qué pasa."
+  Output: "Vamos a intentar usar algunas funciones básicas sólo por diversión. La función Sys.Date() devuelve una cadena que representa la fecha de hoy. Escriba Sys.Date() abajo para ver qué pasa."
   CorrectAnswer: Sys.Date()
   AnswerTests: omnitest(correctExpr='Sys.Date()')
   Hint: "Depliega la fecha de hoy escribiendo: Sys.Date()"
@@ -231,10 +231,5 @@
 - Class: text
   Output: "Hemos llegado al final de nuestra lección! Vaya por ahí y escriba algunas funciones estupendas!"
 
-- Class: mult_question
-  Output: ¿Te gustaría informar a alguien acerca de su finalización con éxito de esta lección?
-  CorrectAnswer: NULL
-  AnswerChoices: Yes; No
-  AnswerTests: notify()
-  Hint: NULL
+
 

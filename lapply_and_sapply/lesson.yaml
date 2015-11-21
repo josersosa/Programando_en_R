@@ -234,9 +234,4 @@
 - Class: text
   Output: En esta lección, ha aprendido a usar el poderosas funciones lapply() y sapply() para aplicar una operación sobre los elementos de una lista. En la siguiente lección, vamos a echar un vistazo a algunos parientes cercanos de lapply() y sapply().
 
-- Class: mult_question
-  Output: ¿Te gustaría informar a alguien acerca de su finalización con éxito de esta lección?
-  CorrectAnswer: NULL
-  AnswerChoices: Yes; No
-  AnswerTests: notify()
-  Hint: NULL
+

@@ -119,9 +119,4 @@
 - Class: text  
   Output: En esta lección, ha aprendido a utilizar vapply() como una alternativa más segura a sapply(), que es más útil al escribir sus propias funciones. También ha aprendido a utilizar tapply() para dividir los datos en grupos basados ​​en el valor de una variable, luego aplicar una función a cada grupo. Estas funciones serán útiles en su búsqueda para convertirse en un mejor analista de datos.
 
-- Class: mult_question
-  Output: ¿Te gustaría informar a alguien acerca de su finalización con éxito de esta lección?
-  CorrectAnswer: NULL
-  AnswerChoices: Yes; No
-  AnswerTests: notify()
-  Hint: NULL
+

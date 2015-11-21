@@ -121,9 +121,4 @@
   AnswerTests: omnitest(correctExpr='rep(c(0, 1, 2), each = 10)')
   Hint: Escriba rep(c (0, 1, 2), each = 10) para ver cómo el argumento `each` de la función rep() altera su comportamiento ligeramente.
 
-- Class: mult_question
-  Output: ¿Te gustaría informar a alguien acerca de su finalización con éxito de esta lección?
-  CorrectAnswer: NULL
-  AnswerChoices: Yes; No
-  AnswerTests: notify()
-  Hint: NULL
+

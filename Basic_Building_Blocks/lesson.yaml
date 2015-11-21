@@ -184,9 +184,4 @@
   AnswerTests: omnitest(correctExpr='my_div')
   Hint: Si su entorno de programación no soporta auto-realización, sólo tienes que escribir my_div y pulse Enter para continuar.
 
-- Class: mult_question
-  Output: ¿Te gustaría informar a alguien acerca de su finalización con éxito de esta lección?
-  CorrectAnswer: NULL
-  AnswerChoices: Yes; No
-  AnswerTests: notify()
-  Hint: NULL
+

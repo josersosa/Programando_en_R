@@ -171,9 +171,4 @@
 - Class: text
   Output: La simulación es prácticamente un campo en si mismo y sólo hemos rozado la superficie de lo que se puede hacer. Le animo a explorar estas y otras funciones más por su cuenta.
 
-- Class: mult_question
-  Output: ¿Te gustaría informar a alguien acerca de su finalización con éxito de esta lección?
-  CorrectAnswer: NULL
-  AnswerChoices: Yes; No
-  AnswerTests: notify()
-  Hint: NULL
+

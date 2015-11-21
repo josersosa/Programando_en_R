@@ -177,9 +177,4 @@
 - Class: text
   Output: En esta lección, usted aprendió lo básico de trabajar con dos estructuras de datos muy importantes y comunes en R -- matrices y tablas de datos. Hay mucho más que aprender y vamos a estar cubriendo temas más avanzados, particularmente con respecto a las tablas de datos, en las lecciones futuras.
 
-- Class: mult_question
-  Output: ¿Te gustaría informar a alguien acerca de su finalización con éxito de esta lección?
-  CorrectAnswer: NULL
-  AnswerChoices: Yes; No
-  AnswerTests: notify()
-  Hint: NULL
+

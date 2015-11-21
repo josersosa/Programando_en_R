@@ -198,9 +198,4 @@
 - Class: text
   Output: Ahora usted sabe los cuatro métodos de subconjuntos de datos de vectores. Diferentes enfoques son mejores en diferentes escenarios y en caso de duda, experiméntalo!
 
-- Class: mult_question
-  Output: Te gustaría informar a alguien acerca de su finalización con éxito de esta lección?
-  CorrectAnswer: NULL
-  AnswerChoices: Yes; No
-  AnswerTests: notify()
-  Hint: NULL
+
