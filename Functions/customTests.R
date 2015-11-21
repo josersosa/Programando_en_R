@@ -56,8 +56,8 @@ test_func5 <- function() {
 test_func6 <- function() {
   try({
     func <- get('mad_libs', globalenv())
-    t1 <- identical(func(place = "Baltimore", adjective = "smelly", noun = "Roger Peng statue"), "News from Baltimore today where smelly students took to the streets in protest of the new Roger Peng statue being installed on campus.")
-    t2 <- identical(func(place = "Washington", adjective = "angry", noun = "Shake Shack"), "News from Washington today where angry students took to the streets in protest of the new Shake Shack being installed on campus.")
+    t1 <- identical(func(lugar = "Baltimore", adjetivo = "smelly", sustantivo = "Roger Peng statue"), "Noticias desde Baltimore en la actualidad, donde los estudiantes smelly salieron a las calles en protesta por el nuevo Roger Peng statue que se está instalando en el campus.")
+    t2 <- identical(func(lugar = "Washington", adjetivo = "angry", sustantivo = "Shake Shack"), "Noticias desde Washington en la actualidad, donde los estudiantes angry salieron a las calles en protesta por el nuevo Shake Shack que se está instalando en el campus.")
     ok <- all(t1, t2)
   }, silent = TRUE)
   exists('ok') && isTRUE(ok)
