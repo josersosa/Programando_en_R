@@ -108,7 +108,7 @@
   Output: Antes de ver el contenido de la variable my_sqrt, ¿qué crees que contiene?
   CorrectAnswer: un vector de longitud 3
   AnswerChoices: un vector de longitud 3; un solo número (es decir, un vector de longitud 1); un vector de longitud 0 (es decir, un vector vacío)
-  AnswerTests: omnitest(correctVal='un vector de longitud 3')
+  AnswerTests: omnitest(correctVal='1')
   Hint: 'Piensa en cómo R manejó la otra operación ''vectorizada'': elemento por elemento.'
 
 - Class: cmd_question
