@@ -48,7 +48,7 @@
   Hint: Escribe x y pulsa Intro. Esto imprimirá automáticamente el valor de x.
 
 - Class: cmd_question
-  Output: Ahora, almacene el resultado de x - 3 en una variable llamada nueva y.
+  Output: Ahora, almacene el resultado de x - 3 en una variable nueva llamada y.
   CorrectAnswer: y <- x - 3
   AnswerTests: omnitest(correctExpr='y <- x - 3')
   Hint: Escriba y <- x - 3 y pulse Intro. Si usted utiliza x - 3 o x-3 es de preferencia personal, pero es buena costumbre de incluir un espacio a cada lado del operador de asignación.
