@@ -146,7 +146,7 @@
   Output: Cuando hicimos z * 2 + 100 en nuestro ejemplo anterior, z era un vector de longitud 3, pero técnicamente 2 y 100 son cada uno de vectores de longitud 1.
 
 - Class: text
-  Output: Detrás de las escenas, R es reciclar, el 2 para hacerlo un vector de 2s y el 100 para hacer un vector de 100s. En otras palabras, cuando usted pide R calcular z * 2 + 100, lo que realmente se calcula es z * c (2, 2, 2) c + (100, 100, 100).
+  Output: Detrás de las escenas, R es reciclar, el 2 para hacerlo un vector de 2s y el 100 para hacer un vector de 100s. En otras palabras, cuando usted pide a R calcular z * 2 + 100, lo que realmente se calcula es z * c(2, 2, 2) + c(100, 100, 100).
 
 - Class: cmd_question
   Output: Para ver otro ejemplo de cómo funciona este vector «reciclado», trate de sumar c(1, 2, 3, 4) y c(0, 10). No te preocupes por guardar el resultado en una nueva variable.
@@ -155,7 +155,7 @@
   Hint: Escriba c(1, 2, 3, 4) + c(0, 10) en la consola para ver cómo R suma dos vectores de diferente longitud. No asigne el resultado a una variable.
 
 - Class: text
-  Output: Si la longitud del vector más corto no divide exactamente a la longitud del vector m'as largo, R seguirá aplicando el método de «reciclado», pero lanzará una advertencia para hacerle saber algo sospechoso podría estar pasando.
+  Output: Si la longitud del vector más corto no divide exactamente a la longitud del vector más largo, R seguirá aplicando el método de «reciclado», pero lanzará una advertencia para hacerle saber que algo sospechoso podría estar pasando.
 
 - Class: cmd_question
   Output: Intente c(1, 2, 3, 4) + c(0, 10, 100) para ver un ejemplo.
@@ -167,7 +167,7 @@
   Output: Antes de concluir esta lección, me gustaría mostrarte un par de trucos para ahorrar tiempo.
 
 - Class: text
-  Output: A principios de la lección, z multiplica * 2 + 100. Supongamos que has cometido un error y que te referías a sumar 1.000 en lugar de 100. Usted podría volver a escribir la expresión, o ...
+  Output: A principios de la lección, z multiplica * 2 + 100. Supongamos que has cometido un error y que querías sumar 1000 en lugar de 100. Usted podría volver a escribir la expresión, o ...
 
 - Class: cmd_question
   Output: En muchos entornos de programación, la tecla flecha hacia arriba recorre a través de los comandos anteriores. Trate de teclear la flecha hacia arriba en el teclado hasta que se llegue a este comando (z * 2 + 100), a continuación, cambiae de 100 a 1000 y pulse Enter. Si la flecha hacia arriba no funciona para ti, sólo tienes que escribir el comando corregido.

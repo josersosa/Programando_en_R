@@ -13,7 +13,7 @@
   Output: "Debido a que los diferentes sistemas operativos tienen diferentes convenciones con respecto a cosas como rutas de los archivos, las salidas de estos comandos pueden variar a través de diferentes máquinas."
 
 - Class: text
-  Output: Sin embargo, es importante señalar que R proporciona una API común (un conjunto común de comandos) para interactuar con archivos, de esa manera su código trabajará  bien en diferentes tipos de computadoras y sistemas operativos.
+  Output: Sin embargo, es importante señalar que R proporciona una API común (un conjunto común de comandos) para interactuar con archivos, de esa manera su código trabajará  bien en diferentes tipos de computadoras y sistemas operativos.
 
 - Class: text
   Output: Vayamos directo a estudiar como trabajan estas funciones especiales!
@@ -31,7 +31,7 @@
   Hint: Escriba ls() para ver todos los objetos en el espacio de trabajo local.
 
 - Class: text
-  Output: Algunos comandos de R son los mismos que sus equivalentes en Linux o en un Mac. De hecho, ttnto Linux como Mac se basan en un sistema operativo llamado Unix. Siempre será una buena idea aprender un poco más sobre Unix!
+  Output: Algunos comandos de R son los mismos que sus equivalentes en Linux o en un Mac. De hecho, tanto Linux como Mac se basan en un sistema operativo llamado Unix. Siempre será una buena idea aprender un poco más sobre Unix!
 
 - Class: cmd_question
   Output: Asignar 9 a x con x <- 9.
@@ -46,7 +46,7 @@
   Hint: Escriba ls() para ver todos los objetos en el espacio de trabajo.
 
 - Class: cmd_question
-  Output: Liste todos los archivos en el directorio de trabajo utilizando list.files() o  dir().
+  Output: Liste todos los archivos en el directorio de trabajo utilizando list.files() o dir().
   CorrectAnswer: list.files()
   AnswerTests: any_of_exprs('list.files()', 'dir()')
   Hint: Escriba list.files() para ver todos los archivos en su directorio de trabajo.
@@ -80,7 +80,7 @@
   Output: Usaremos old.dir al final de esta lección para movernos de vuelta al lugar en el que empezamos. Una gran cantidad de funciones de consulta como getwd() tienen la útil propiedad que devuelvan la respuesta a la pregunta, como resultado de la función.
 
 - Class: cmd_question
-  Output: Use dir.create() para crear un directorio llamado "testdir" en el directorio trabajo actual.
+  Output: Use dir.create() para crear un directorio llamado "testdir" en el directorio trabajo actual.
   CorrectAnswer: dir.create("testdir")
   AnswerTests: omnitest(correctExpr='dir.create("testdir")')
   Hint: Escriba dir.create("testdir") para crear un directorio llamado "testdir" en el directorio trabajo actual.
@@ -116,7 +116,7 @@
   Hint: Use file.exists(("mytest.R") para comprobar que existe el archivo.
 
 - Class: text
-  Output: Este tipo de funciones son excesivas para el trabajo interactivo. Pero si está ejecutando un programa que recorre una serie de archivos y hace algún procesamiento en cada uno, usted querrá comprobar que cada uno existe antes intentar procesarlo.
+  Output: Este tipo de funciones son excesivas para el trabajo interactivo. Pero si está ejecutando un programa que recorre una serie de archivos y hace algún procesamiento en cada uno, usted querrá comprobar que cada uno existe antes intentar procesarlo.
 
 - Class: cmd_question
   Output: Accese a la información sobre el archivo "mytest.R" utilizando file.info().
@@ -125,10 +125,10 @@
   Hint: file.info("mytest.R") hará el truco!
 
 - Class: text
-  Output: Puede utilizar el operador $, por ejemplo, file.info("mytest.R")$mode para obtener objetos específicos del resultado.
+  Output: Puede utilizar el operador $, por ejemplo, file.info("mytest.R")$mode para obtener objetos específicos del resultado.
 
 - Class: cmd_question
-  Output: Cambie el nombre del archivo "mytest.R" a "mytest2.R" mediante el uso de file.rename().
+  Output: Cambie el nombre del archivo "mytest.R" a "mytest2.R" mediante el uso de file.rename().
   CorrectAnswer: file.rename("mytest.R", "mytest2.R")
   AnswerTests: any_of_exprs('file.rename("mytest.R", "mytest2.R")', 'file.rename(from = "mytest.R", to = "mytest2.R")')
   Hint: file.rename("mytest.R", "mytest2.R") es la respuesta. Busque en Google usando las palabras clave de la pregunta, junto con la letra R, a menudo le dará buenas sugerencias.
@@ -158,19 +158,19 @@
   Hint: file.path("folder1", "folder2") funcionará.
 
 - Class: cmd_question
-  Output: "Echa un vistazo a la documentación de dir.create introduciendo ?dir.create. Observe el argumento 'recursive'. Con el fin de crear directorios anidados, 'recursive' debe establecerse en TRUE."
+  Output: "Echa un vistazo a la documentación de dir.create introduciendo ?dir.create. Observe el argumento 'recursive'. Con el fin de crear directorios anidados, 'recursive' debe establecerse en TRUE."
   CorrectAnswer: ?dir.create
   AnswerTests: omnitest(correctExpr='?dir.create')
   Hint: ?dir.create le mostrará la documentación.
 
 - Class: cmd_question
-  Output: Cree un directorio en el directorio actual de trabajo llamado "testdir2" y un subdirectorio dentro de el, llamó "testdir3", todo en un solo comando mediante el uso de dir.create() y file.path().
+  Output: Cree un directorio en el directorio actual de trabajo llamado "testdir2" y un subdirectorio dentro de el, llamó "testdir3", todo en un solo comando mediante el uso de dir.create() y file.path().
   CorrectAnswer: dir.create(file.path("testdir2", "testdir3"), recursive = TRUE)
   AnswerTests: omnitest(correctExpr='dir.create(file.path("testdir2", "testdir3"), recursive = TRUE)')
   Hint: "dir.create(file.path('testdir2', 'testdir3'), recursive = TRUE) hará el truco. Si hubera olvidó el argumento recursivo, el comando podría aparentar que funciona, pero no crearía el directorio anidado."
 
 - Class: text
-  Output:  Para eliminar un directorio se debe utilizar el argumento recursive = TRUE con la función unlink(). Si usted no utiliza recursive = TRUE, R se preocupa porque estés consciente de que estás por borrar un directorio y todo contenido. R razona esto, si usted no especifica que recursive es igual a TRUE, es porque usted puede no saber si hay algo en el directorio que está tratando borrar. Por tanto R intentará evitar que usted cometeta un error."
+  Output:  Para eliminar un directorio se debe utilizar el argumento recursive = TRUE con la función unlink(). Si usted no utiliza recursive = TRUE, R se preocupa porque estés consciente de que estás por borrar un directorio y todo contenido. R razona esto, si usted no especifica que recursive es igual a TRUE, es porque usted puede no saber si hay algo en el directorio que está tratando borrar. Por tanto R intentará evitar que usted cometeta un error."
 
 - Class: cmd_question
   Output: Elimine el directorio "testdir2" que ha creado mediante el uso de la función unlink().
@@ -182,7 +182,7 @@
   Output: ¿Por qué este comando se llama "unlink" en lugar de algo más sensato como "dir.delete" o "dir.remove"? Principalmente, por la historia. unlink es el comando de Unix tradicional para eliminar directorios.
 
 - Class: cmd_question
-  Output: Vuelve a tu directorio de trabajo original usando setwd() (Recordemos que en el inicio de estas preguntas creamos la variable old.dir, con la ruta completa para el directorio de trabajo original).
+  Output: Vuelve a tu directorio de trabajo original usando setwd() (Recordemos que en el inicio de estas preguntas creamos la variable old.dir, con la ruta completa para el directorio de trabajo original).
   CorrectAnswer: setwd(old.dir)
   AnswerTests: omnitest(correctExpr='setwd(old.dir)')
   Hint: Utilice setwd(old.dir).
