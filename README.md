@@ -27,11 +27,7 @@ library(swirl)
 install_course_github('josersosa','Programando_en_R')
 ```
 
-He preparado un script ([instalar_curso.R](https://raw.githubusercontent.com/josersosa/Programando_en_R/master/instalar_curso.R)) para instalar este paquete junto con sus dependencias, en el caso de que no estén ya instaladas. También instala el curos y configura el idioma al español. Se puede ejecutar desde este repositorio con el comando:
-
-```{r}
-source("https://raw.githubusercontent.com/josersosa/Programando_en_R/master/instalar_curso.R")
-```
+He preparado un script ([instalar_curso.R](https://raw.githubusercontent.com/josersosa/Programando_en_R/master/instalar_curso.R)) para instalar este paquete junto con sus dependencias, en el caso de que no estén ya instaladas. También instala el curso y configura el idioma al español. 
 
 Luego lo iniciamos con:
 
