@@ -113,10 +113,7 @@
   Hint: Pruebe rep(c (0, 1, 2), times = 10) para diferentes variaciones sobre el mismo tema. Asegúrese de utilizar la función c() para decirle R que los números 0, 1 y 2 constituyen un vector.
 
 - Class: cmd_question
-  Output: Finally, let's say that rather than repeating the vector (0, 1, 2) over
-    and over again, we want our vector to contain 10 zeros, then 10 ones, then 10
-    twos. We can do this with the `each` argument. Try rep(c(0, 1, 2), each = 10).
-    Por último, vamos a decir que en lugar de repetir el vector (0, 1, 2) una y otra vez, queremos que nuestro vector contenga 10 ceros, luego  10 unos, y luego 10 dos. Podemos hacer esto con el argumento `each`. Trate de rep(c (0, 1, 2), each = 10).
+  Output: Por último, vamos a decir que en lugar de repetir el vector (0, 1, 2) una y otra vez, queremos que nuestro vector contenga 10 ceros, luego  10 unos, y luego 10 dos. Podemos hacer esto con el argumento `each`. Trate de rep(c (0, 1, 2), each = 10).
   CorrectAnswer: rep(c(0, 1, 2), each = 10)
   AnswerTests: omnitest(correctExpr='rep(c(0, 1, 2), each = 10)')
   Hint: Escriba rep(c (0, 1, 2), each = 10) para ver cómo el argumento `each` de la función rep() altera su comportamiento ligeramente.

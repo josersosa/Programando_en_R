@@ -61,7 +61,7 @@
   Output: Al igual que en la clase de matemáticas, cuando se trata de un objeto de 2 dimensiones (piense en una mesa rectangular), el primer número es el número de filas y el segundo es el número de columnas. Por lo tanto, asignamos a my_vector 4 filas y 5 columnas.
 
 - Class: cmd_question
-  Output: ero, espera! Eso no suena como que siga siendo un vector. Bueno, no lo es. Ahora es una matriz. Ver el contenido de my_vector ahora para ver lo que parece.
+  Output: Pero, espera! Eso no suena como que siga siendo un vector. Bueno, no lo es. Ahora es una matriz. Ver el contenido de my_vector ahora para ver lo que parece.
   CorrectAnswer: my_vector
   AnswerTests: omnitest(correctExpr='my_vector')
   Hint: Escriba my_vector para ver su contenido.

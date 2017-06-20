@@ -27,7 +27,13 @@ library(swirl)
 install_course_github('josersosa','Programando_en_R')
 ```
 
-Y lo iniciamos con:
+He preparado un script para instalar este paquete junto con sus dependencias, en el caso de que no estén ya instaladas. También instala el curos y configura el idioma al español. Se puede ejecutar desde este repositorio con el comando:
+
+```{r}
+source("/media/USB DISK/Sincronizar/Proyectos/RDistro/swirl/instalar_curso.R")
+```
+
+Luego lo iniciamos con:
 
 ```{r}
 swirl()

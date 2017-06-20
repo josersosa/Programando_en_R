@@ -65,10 +65,7 @@
   Output: Si tenemos dos expresiones lógicas, A y B, podemos preguntarnos si, al menos, uno es TRUE con A | B ('o' lógico alias 'unión') o si son ambos TRUE con A & B ('y' lógico alias 'intersección'). Por último, !A es la negación de A y es cierto cuando A es FALSO y viceversa.
 
 - Class: text
-  Output: It's a good idea to spend some time playing around with various combinations
-    of these logical operators until you get comfortable with their use. We'll do
-    a few examples here to get you started.
-    Es una buena idea pasar algún tiempo jugando con diversas combinaciones de estos operadores lógicos hasta que se sienta cómodo con su uso. Bien, seguimos con algunos ejemplos para empezar.
+  Output: Es una buena idea pasar algún tiempo jugando con diversas combinaciones de estos operadores lógicos hasta que se sienta cómodo con su uso. Bien, seguimos con algunos ejemplos para empezar.
 
 - Class: text
   Output: Haga su mejor esfuerzo para predecir el resultado de cada una de las siguientes afirmaciones. Puede usar lápiz y papel para resolverlos si es útil. Si te quedas atascado, simplemente adivinar y usted tiene una probabilidad del 50% de obtener la respuesta correcta!
