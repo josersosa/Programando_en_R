@@ -27,10 +27,10 @@ library(swirl)
 install_course_github('josersosa','Programando_en_R')
 ```
 
-He preparado un script para instalar este paquete junto con sus dependencias, en el caso de que no estén ya instaladas. También instala el curos y configura el idioma al español. Se puede ejecutar desde este repositorio con el comando:
+He preparado un script ([instalar_curso.R](https://raw.githubusercontent.com/josersosa/Programando_en_R/master/instalar_curso.R)) para instalar este paquete junto con sus dependencias, en el caso de que no estén ya instaladas. También instala el curos y configura el idioma al español. Se puede ejecutar desde este repositorio con el comando:
 
 ```{r}
-source("/media/USB DISK/Sincronizar/Proyectos/RDistro/swirl/instalar_curso.R")
+source("https://raw.githubusercontent.com/josersosa/Programando_en_R/master/instalar_curso.R")
 ```
 
 Luego lo iniciamos con:
@@ -39,7 +39,11 @@ Luego lo iniciamos con:
 swirl()
 ```
 
-Al comienzo nos solicita un nombre para identificarnos y almacenar los avances que hagamos en el caso que deseemos pausar el curso. Las primeras informaciones estan en ingles porque provienen del paquete swirl. Luego seleccionamos el curso _Programando en R_ y a partir de ahí todo lo esencial estará traducido.
+Al comienzo nos solicita un nombre para identificarnos y almacenar los avances que hagamos en el caso que deseemos pausar el curso. Las primeras informaciones estan en ingles porque provienen del paquete swirl. Luego seleccionamos el curso _Programando en R_ y a partir de ahí todo lo esencial estará traducido. Las últimas versiones de swirl incluyen una función para seleccionar el idioma, que pdemos utilizar para que los mensajes del sistema estén en español:
+
+```{r}
+select_language(language = "spanish")
+```{r}
 
 Por último, cuando hayamos terminado, podemos desinstalar el curso con:
 

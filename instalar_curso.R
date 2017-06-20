@@ -15,4 +15,5 @@ if (file.exists("/opt/R/home/library/swirl/Courses/Programando_en_R")) {
   uninstall_course("Programando_en_R")
   }
 install_course_github('josersosa','Programando_en_R')
+select_language(language = "spanish")
 
