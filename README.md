@@ -39,7 +39,7 @@ Al comienzo nos solicita un nombre para identificarnos y almacenar los avances q
 
 ```{r}
 select_language(language = "spanish")
-```{r}
+```
 
 Por último, cuando hayamos terminado, podemos desinstalar el curso con:
 
