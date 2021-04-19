@@ -1,4 +1,7 @@
-FROM rocker/rstudio:3.5.3
+FROM rocker/rstudio:4.0.0
+
+ARG PASSWORD=curso 
+ARG DISABLE_AUTH=true
 
 MAINTAINER "Jose R Sosa" josersosa@gmail.com
 
@@ -10,5 +13,5 @@ RUN apt-get update \
     swirl \
     && R -e "swirl::install_course_github('josersosa','Programando_en_R')"
 	
-COPY .Rprofile /home/rstudio/
-RUN chown rstudio:rstudio /home/rstudio/.Rprofile
+#COPY .Rprofile /home/rstudio/
+#RUN chown rstudio:rstudio /home/rstudio/.Rprofile
